@@ -8,7 +8,6 @@ namespace Snake_Projekt
 {
     class Player
     {
-        private int score;
-        privte ubt 
+        private int score; 
     }
 }
