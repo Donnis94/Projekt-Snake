@@ -8,6 +8,5 @@ namespace Snake_Projekt
 {
     class Controller
     {
-        Console.WriteLine("Hello");
     }
 }
