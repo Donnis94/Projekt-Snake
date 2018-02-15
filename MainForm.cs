@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Snake_Projekt
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         Renderer r;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             Initialize();
