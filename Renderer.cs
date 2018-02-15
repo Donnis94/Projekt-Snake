@@ -9,14 +9,17 @@ namespace Snake_Projekt
 {
     public class Renderer
     {
-        public Renderer()
-        {
+        Graphics drawArea;
 
+        public Renderer(Graphics g)
+        {
+            drawArea = g;
         }
 
-        public void DrawAt(int x, int y, Pens p)
+        public void DrawAt(int x, int y, Pen p)
         {
-
+            int magicTileNumber = 32; //Make less magical in the future
+            drawArea.DrawRectangle(p, x * magicTileNumber, y * magicTileNumber, magicTileNumber, magicTileNumber);
         }
     }
 }
