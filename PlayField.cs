@@ -11,28 +11,24 @@ namespace Snake_Projekt
     {
         ISet<Snake> Players = new HashSet<Snake>();
         ISet<Food> Food = new HashSet<Food>();
-        Timer timer;
         
-        public PlayField(int AmountOfPlayers, Renderer renderer)
+        public PlayField(int AmountOfPlayers)
         {
-            timer = new Timer();
-            
+            Players.Add(new Snake(1, 1, 1, null, System.Drawing.Color.AliceBlue));
         }
         
         public void Run()
         {
-            playForm.Paint += new PaintEventHandler(Draw);
-            timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000/25;
-            timer.Start();
         }
 
         private bool IsGameOver()
         {
             foreach(var player in Players)
             {
-                return player.IsAlive();
+                //return player.IsAlive();
             }
+
+            return false;
         }
 
         private void CheckCollisions()
@@ -40,15 +36,15 @@ namespace Snake_Projekt
             throw new NotImplementedException();
         }
 
-        private void Draw()
+        private void Draw(Renderer renderer)
         {
             foreach(var player in Players)
             {
-                player.Draw();
+                player.Draw(renderer);
             }
             foreach(var food in Food)
             {
-                food.Draw();
+                //food.Draw(renderer);
             }
         }
 
@@ -63,11 +59,6 @@ namespace Snake_Projekt
             {
                 // Stop game somehow.
             }
-        }
-
-        private TimeEventHandler(object sender, EventArgs args)
-        {
-
         }
     }
 }
