@@ -22,4 +22,5 @@ namespace Snake_Projekt
             throw new NotImplementedException();
         }
     }
+    
 }
