@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
+using System.Windows.Forms;
 
 namespace Snake_Projekt
 {
@@ -16,12 +16,12 @@ namespace Snake_Projekt
         public PlayField(int AmountOfPlayers, Renderer renderer)
         {
             timer = new Timer();
-
+            
         }
         
         public void Run()
         {
-            playForm.Paint += new PaintEventHandler();
+            playForm.Paint += new PaintEventHandler(Draw);
             
         }
 
