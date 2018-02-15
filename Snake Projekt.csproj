@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="HelloWorld.cs" />
     <Compile Include="Hey.cs" />
+    <Compile Include="IDrawable.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
