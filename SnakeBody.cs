@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Snake_Projekt
 {
-    class Body
+    class SnakeBody
     {
-        Console.
+        Con
     }
 }

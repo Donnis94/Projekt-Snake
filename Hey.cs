@@ -8,5 +8,6 @@ namespace Snake_Projekt
 {
     class Hey
     {
+        
     }
 }
