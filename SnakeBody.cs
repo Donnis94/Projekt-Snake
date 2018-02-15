@@ -14,7 +14,7 @@ namespace Snake_Projekt
         Snake mySnake { get; }
         public Point position { get; set; }
 
-        public SnakeBody(Point _position , Snake _mySnake)
+        public SnakeBody(Point _position, Snake _mySnake)
         {
             mySnake = _mySnake;
             position = _position;

@@ -12,22 +12,22 @@ namespace Snake_Projekt
     {
         ISet<Snake> Players = new HashSet<Snake>();
         ISet<Food> Food = new HashSet<Food>();
-        
+
         public PlayField(int AmountOfPlayers)
         {
             Players.Add(new Snake(1, 1, 2, null, System.Drawing.Color.AliceBlue));
-            Food.Add(new SpeedyFood(new Point(3,4), this));
-            Food.Add(new SpeedyFood(new Point(5,6), this));
-            Food.Add(new StandardFood(new Point(7,7), this));
-            Food.Add(new ValuableFood(new Point(0,0), this));
+            Food.Add(new SpeedyFood(new Point(3, 4), this));
+            Food.Add(new SpeedyFood(new Point(5, 6), this));
+            Food.Add(new StandardFood(new Point(7, 7), this));
+            Food.Add(new ValuableFood(new Point(0, 0), this));
         }
-        
+
         public void GameLoop()
         {
-            foreach(var player in Players)
-                {
+            foreach (var player in Players)
+            {
                 player.Move();
-}
+            }
             CheckCollisions();
 
             if (IsGameOver())
@@ -38,7 +38,7 @@ namespace Snake_Projekt
 
         private bool IsGameOver()
         {
-            foreach(var player in Players)
+            foreach (var player in Players)
             {
                 //return player.IsAlive();
             }
@@ -53,11 +53,11 @@ namespace Snake_Projekt
 
         public void Draw(Renderer renderer)
         {
-            foreach(var player in Players)
+            foreach (var player in Players)
             {
                 player.Draw(renderer);
             }
-            foreach(var food in Food)
+            foreach (var food in Food)
             {
                 food.Draw(renderer);
             }
@@ -70,7 +70,7 @@ namespace Snake_Projekt
 
         private void EndGame()
         {
-            if(IsGameOver())
+            if (IsGameOver())
             {
                 // Stop game somehow.
             }

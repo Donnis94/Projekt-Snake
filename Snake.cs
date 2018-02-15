@@ -7,16 +7,16 @@ using System.Drawing;
 
 namespace Snake_Projekt
 {
-    class Snake 
+    class Snake
     {
-        private List<SnakeBody> body = new List<SnakeBody>(); 
+        private List<SnakeBody> body = new List<SnakeBody>();
         private int score;
         private Controller controller;
         bool isAlive = true;
         Point point;
         private int size;
-        public enum Direction { up,down,left, right};
-        private int speed=10;
+        public enum Direction { up, down, left, right };
+        private int speed = 10;
         Color color
         {
             set;
@@ -24,7 +24,7 @@ namespace Snake_Projekt
         }
 
         public Snake(int x, int y, int size, Controller controller, Color color) : this(new Point(x, y), size, controller, color) { }
-        public Snake (Point point, int size, Controller controller,Color color)
+        public Snake(Point point, int size, Controller controller, Color color)
         {
             this.point = point;
             this.size = size;
@@ -32,32 +32,32 @@ namespace Snake_Projekt
             this.color = color;
             this.score = 0;
             this.isAlive = true;
-            body.Add(new SnakeBody(point,this));
-            for(int i = 0; i < size; i++)
+            body.Add(new SnakeBody(point, this));
+            for (int i = 0; i < size; i++)
                 expand();
-                
+
         }
 
-        public void Move ()
+        public void Move()
         {
-             for(int i = body.Count-1; i > 0; i--)
-                body[i].position = body[i-1].position;
+            for (int i = body.Count - 1; i > 0; i--)
+                body[i].position = body[i - 1].position;
 
-             body[0].position = new Point(body[0].position.X + 1, body[0].position.Y);
+            body[0].position = new Point(body[0].position.X + 1, body[0].position.Y);
         }
-    
-        public void isValidMove (Direction direction)
+
+        public void isValidMove(Direction direction)
         {
-            
+
 
         }
 
-        public void expand ()
+        public void expand()
         {
-            body.Add(new SnakeBody(body[body.Count-1].position, this));//need to set the actual position of the last bodypart
+            body.Add(new SnakeBody(body[body.Count - 1].position, this));//need to set the actual position of the last bodypart
         }
 
-        public List<SnakeBody> getHead ()
+        public List<SnakeBody> getHead()
         {
             return this.body;
         }
