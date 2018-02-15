@@ -22,7 +22,9 @@ namespace Snake_Projekt
         public void Run()
         {
             playForm.Paint += new PaintEventHandler(Draw);
-            
+            timer.Tick += new EventHandler(TimerEventHandler);
+            timer.Interval = 1000/25;
+            timer.Start();
         }
 
         private bool IsGameOver()
