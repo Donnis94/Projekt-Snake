@@ -32,13 +32,18 @@ namespace Snake_Projekt
             this.color = color;
             this.score = 0;
             this.isAlive = true;
-            body.Add(new SnakeBody(new Point(2, 2), this));
-            body.Add(new SnakeBody(new Point(3, 2), this));
+            body.Add(new SnakeBody(point,this));
+            for(int i = 0; i < size; i++)
+                expand();
+                
         }
 
-        public void Move (Direction direction)
+        public void Move ()
         {
-             
+             for(int i = body.Count-1; i > 0; i--)
+                body[i].position = body[i-1].position;
+
+             body[0].position = new Point(body[0].position.X + 1, body[0].position.Y);
         }
     
         public void isValidMove (Direction direction)
@@ -49,7 +54,7 @@ namespace Snake_Projekt
 
         public void expand ()
         {
-            //body.Add(new SnakeBody(new Point, this));//need to set the actual position of the last bodypart
+            body.Add(new SnakeBody(body[body.Count-1].position, this));//need to set the actual position of the last bodypart
         }
 
         public List<SnakeBody> getHead ()

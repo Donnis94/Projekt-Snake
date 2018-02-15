@@ -31,7 +31,7 @@ namespace Snake_Projekt
 
             timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000 / 24;
+            timer.Interval = 1000 / 2;
             timer.Start();
 
 
@@ -44,7 +44,7 @@ namespace Snake_Projekt
 
         private void TimerEventHandler(Object obj, EventArgs args)
         {
-            //Game loop!!
+            pf.GameLoop();
             this.Refresh();
         }
     }

@@ -12,7 +12,7 @@ namespace Snake_Projekt
         Pen pen = new Pen(Color.Black);
 
         Snake mySnake { get; }
-        Point position { get; set; }
+        public Point position { get; set; }
 
         public SnakeBody(Point _position , Snake _mySnake)
         {
