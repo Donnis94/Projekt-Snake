@@ -15,7 +15,7 @@ namespace Snake_Projekt
         bool isAlive = true;
         Point point;
         private int size;
-        enum Direction { up,down,left, right};
+        public enum Direction { up,down,left, right};
         Color color
         {
             set;
@@ -29,25 +29,25 @@ namespace Snake_Projekt
             this.controller = controller;
             this.color = color;
             score = 0;
-            size = 2;
+            
         }
-        private void Move (Direction direction)
+        public void Move (Direction direction)
         {
 
         }
-        private void isValidMove (Direction direction)
+        public void isValidMove (Direction direction)
         {
 
         }
-        private void expand ()
+        public void expand ()
         {
 
         }
-        private void getHead ()
+        public void getHead ()
         {
 
         }
-        private void CollisionEffect()
+        public void CollisionEffect()
         {
 
         }
