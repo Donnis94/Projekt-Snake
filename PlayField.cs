@@ -12,18 +12,16 @@ namespace Snake_Projekt
         ISet<Snake> Players = new HashSet<Snake>();
         ISet<Food> Food = new HashSet<Food>();
         Timer timer;
-        Form1 playForm;
-
-        public PlayField(int AmountOfPlayers)
+        
+        public PlayField(int AmountOfPlayers, Renderer renderer)
         {
-            playForm = new Form1();
             timer = new Timer();
 
         }
         
         public void Run()
         {
-            playForm.Paint += new PaintEventHandler;
+            playForm.Paint += new PaintEventHandler();
             
         }
 
