@@ -12,9 +12,14 @@ namespace Snake_Projekt
         Pen pen;
         int points;
         Point position;
-        
+
         public Food(Point position, PlayField playField)
-            {
-}
+        {
+        }
+        public void Draw(Renderer renderer)
+        {
+            
+        }
     }
+    
 }
