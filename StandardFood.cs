@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake_Projekt
 {
-    class Hey
+    class StandardFood : Food
     {
-        
     }
 }

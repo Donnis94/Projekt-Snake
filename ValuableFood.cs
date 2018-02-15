@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake_Projekt
 {
-    class HelloWorld
+    class ValuableFood : Food
     {
-        Console.WriteLine("Hello");
     }
 }
