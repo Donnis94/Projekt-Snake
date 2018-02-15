@@ -9,5 +9,6 @@ namespace Snake_Projekt
 {
 	public interface IDrawable
 	{
+
 	}
 }
