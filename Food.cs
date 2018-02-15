@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake_Projekt
 {
-    class Food
+    class Food : IDrawable
     {
 
     }
