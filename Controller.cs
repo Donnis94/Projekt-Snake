@@ -8,6 +8,8 @@ namespace Snake_Projekt
 {
     class Controller
     {
+        //Remove this.
 
+        //Just testing
     }
 }
