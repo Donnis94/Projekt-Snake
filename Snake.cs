@@ -49,7 +49,7 @@ namespace Snake_Projekt
 
         public void expand ()
         {
-            body.Add(new SnakeBody(new Point, this));//need to set the actual position of the last bodypart
+            //body.Add(new SnakeBody(new Point, this));//need to set the actual position of the last bodypart
         }
 
         public List<SnakeBody> getHead ()
@@ -59,6 +59,7 @@ namespace Snake_Projekt
 
         public void CollisionEffect()
         {
+            /*
             if ()//collides with standard food 
             {
                 expand();
@@ -75,6 +76,7 @@ namespace Snake_Projekt
                 this.speed = speed * 2;
                 //set timer for speed at 10 seconds
             }
+            */
         }
 
         public void Draw(Renderer renderer)

@@ -24,7 +24,6 @@ namespace Snake_Projekt
 
         private void Initialize()
         {
-            DoubleBuffered = true;
             this.Paint += new PaintEventHandler(Draw);
 
             pf = new PlayField(1);
@@ -32,7 +31,7 @@ namespace Snake_Projekt
 
             timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000 / 25;
+            timer.Interval = 1000 / 24;
             timer.Start();
 
 
