@@ -32,10 +32,13 @@ namespace Snake_Projekt
         }
         public void Move (Direction direction)
         {
-
+             
         }
+    
+
         public void isValidMove (Direction direction)
         {
+            
 
         }
         public void expand ()
