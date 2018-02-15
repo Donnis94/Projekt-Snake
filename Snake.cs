@@ -15,7 +15,7 @@ namespace Snake_Projekt
         bool isAlive = true;
         Point point;
         private int size;
-        enum Direction { up,down,left, right};
+        public enum Direction { up,down,left, right};
         Color color
         {
             set;
@@ -31,31 +31,32 @@ namespace Snake_Projekt
             score = 0;
             size = 2;
         }
-        private void Move (Direction direction)
+        public void Move (Direction direction)
         {
 
         }
-        private void isValidMove (Direction direction)
+        public void isValidMove (Direction direction)
         {
 
         }
-        private void expand ()
+        public void expand ()
         {
 
         }
-        private void getHead ()
+        public void getHead ()
         {
 
         }
-        private void CollisionEffect()
+        public void CollisionEffect()
         {
 
         }
-        public void draw()
+        public void Draw(Renderer renderer)
         {
-
+            for (int i = 0; i < body.Count; i++)
+            {
+                body[i].Draw(renderer);
+            }
         }
-
-        
     }
 }
