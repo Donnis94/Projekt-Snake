@@ -11,8 +11,8 @@ namespace Snake_Projekt
     {
         Pen pen = new Pen(Color.Black);
 
-        Snake mySnake;
-        Point position;
+        Snake mySnake { get; }
+        Point position { get; set; }
 
         public SnakeBody(Point _position , Snake _mySnake)
         {
