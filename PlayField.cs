@@ -17,8 +17,13 @@ namespace Snake_Projekt
             Players.Add(new Snake(1, 1, 1, null, System.Drawing.Color.AliceBlue));
         }
         
-        public void Run()
+        public void GameLoop()
         {
+            CheckCollisions();
+            if (IsGameOver())
+            {
+
+            }
         }
 
         private bool IsGameOver()
@@ -33,7 +38,7 @@ namespace Snake_Projekt
 
         private void CheckCollisions()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void Draw(Renderer renderer)
