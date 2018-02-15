@@ -12,15 +12,17 @@ namespace Snake_Projekt
         Pen pen = new Pen(Color.Black);
 
         Snake mySnake;
+        Point position;
 
-        public SnakeBody(Snake _mySnake)
+        public SnakeBody(Point _position , Snake _mySnake)
         {
             mySnake = _mySnake;
+            position = _position;
         }
 
         public void Draw(Renderer renderer)
         {
-            
+            renderer.DrawAt(position.X, position.Y, pen);
         }
     }
 }
