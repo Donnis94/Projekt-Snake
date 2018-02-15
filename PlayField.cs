@@ -14,8 +14,7 @@ namespace Snake_Projekt
         
         public PlayField(int AmountOfPlayers)
         {
-            timer = new Timer();
-            
+            Players.Add(new Snake(1, 1, 1, null, System.Drawing.Color.AliceBlue));
         }
         
         public void Run()
