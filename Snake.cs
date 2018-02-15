@@ -29,7 +29,6 @@ namespace Snake_Projekt
             this.controller = controller;
             this.color = color;
             score = 0;
-            size = 2;
         }
         private void Move (Direction direction)
         {

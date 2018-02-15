@@ -45,7 +45,7 @@ namespace Snake_Projekt
 
         private void TimerEventHandler(Object obj, EventArgs args)
         {
-
+            //Game loop!!
             this.Refresh();
         }
     }
