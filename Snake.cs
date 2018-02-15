@@ -16,11 +16,13 @@ namespace Snake_Projekt
         Point point;
         private int size;
         public enum Direction { up,down,left, right};
+        private int speed=10;
         Color color
         {
             set;
             get;
         }
+
         public Snake(int x, int y, int size, Controller controller, Color color) : this(new Point(x, y), size, controller, color) { }
         public Snake (Point point, int size, Controller controller,Color color)
         {
@@ -28,34 +30,53 @@ namespace Snake_Projekt
             this.size = size;
             this.controller = controller;
             this.color = color;
-            score = 0;
-
+            this.score = 0;
+            this.isAlive = true;
             body.Add(new SnakeBody(new Point(2, 2), this));
             body.Add(new SnakeBody(new Point(3, 2), this));
         }
+
         public void Move (Direction direction)
         {
              
         }
     
-
         public void isValidMove (Direction direction)
         {
             
 
         }
+
         public void expand ()
         {
-
+            body.Add(new SnakeBody(new Point, this));//need to set the actual position of the last bodypart
         }
-        public void getHead ()
+
+        public List<SnakeBody> getHead ()
         {
-
+            return this.body;
         }
+
         public void CollisionEffect()
         {
-
+            if ()//collides with standard food 
+            {
+                expand();
+                this.score = score + 1;
+            }
+            else if ()//collides with special food
+            {
+                expand();
+                expand();
+                this.score = score + 2;
+            }
+            else if ()//collide with speedy food
+            {
+                this.speed = speed * 2;
+                //set timer for speed at 10 seconds
+            }
         }
+
         public void Draw(Renderer renderer)
         {
             for (int i = 0; i < body.Count; i++)
@@ -63,5 +84,6 @@ namespace Snake_Projekt
                 body[i].Draw(renderer);
             }
         }
+
     }
 }

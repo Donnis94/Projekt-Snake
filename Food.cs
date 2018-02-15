@@ -14,8 +14,13 @@ namespace Snake_Projekt
         Point position;
 
         public Food(Point position, PlayField playField)
-            {
-}
+        {
+        }
+
+        public void Draw(Renderer renderer)
+        {
+            throw new NotImplementedException();
+        }
     }
     
 }
