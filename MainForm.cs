@@ -12,7 +12,10 @@ namespace Snake_Projekt
 {
     public partial class MainForm : Form
     {
+        PlayField pf;
         Renderer r;
+        Timer timer;
+
         public MainForm()
         {
             InitializeComponent();
@@ -22,9 +25,12 @@ namespace Snake_Projekt
         private void Initialize()
         {
             this.Paint += new PaintEventHandler(Draw);
-            this.MouseClick += new MouseEventHandler(Form1_MouseClick);
-            r = new Renderer(this.CreateGraphics());
-            
+
+            pf = new PlayField(1, new Renderer(this.CreateGraphics()));
+
+            timer.Tick += new EventHandler(TimerEventHandler);
+            timer.Interval = 1000 / 25;
+            timer.Start();
 
 
         }
@@ -37,9 +43,10 @@ namespace Snake_Projekt
             r.DrawAt(0, 1, Pens.Black);
         }
 
-        void Form1_MouseClick(object sender, MouseEventArgs e)
+        private void TimerEventHandler(Object obj, EventArgs args)
         {
-            Refresh();
+
+            this.Refresh();
         }
     }
 }
