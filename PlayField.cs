@@ -22,8 +22,13 @@ namespace Snake_Projekt
             Food.Add(new ValuableFood(new Point(0,0), this));
         }
         
-        public void Run()
+        public void GameLoop()
         {
+            CheckCollisions();
+            if (IsGameOver())
+            {
+
+            }
         }
 
         private bool IsGameOver()
@@ -38,7 +43,7 @@ namespace Snake_Projekt
 
         private void CheckCollisions()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void Draw(Renderer renderer)

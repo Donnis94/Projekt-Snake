@@ -26,4 +26,5 @@ namespace Snake_Projekt
             renderer.DrawAt(position.X, position.Y, pen);
         }
     }
+    
 }
