@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Snake_Projekt
 {
@@ -15,6 +16,10 @@ namespace Snake_Projekt
         public PlayField(int AmountOfPlayers)
         {
             Players.Add(new Snake(1, 1, 1, null, System.Drawing.Color.AliceBlue));
+            Food.Add(new SpeedyFood(new Point(3,4), this));
+            Food.Add(new SpeedyFood(new Point(5,6), this));
+            Food.Add(new StandardFood(new Point(7,7), this));
+            Food.Add(new ValuableFood(new Point(0,0), this));
         }
         
         public void Run()
@@ -44,7 +49,7 @@ namespace Snake_Projekt
             }
             foreach(var food in Food)
             {
-                //food.Draw(renderer);
+                food.Draw(renderer);
             }
         }
 

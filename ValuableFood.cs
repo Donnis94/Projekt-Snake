@@ -9,7 +9,7 @@ namespace Snake_Projekt
 {
     class ValuableFood : Food
     {
-        public ValuableFood(Point position, PlayField playField) : base(position, playField)
+        public ValuableFood(Point position, PlayField playField) : base(position, playField, Pens.DarkGray)
         {
         }
     }

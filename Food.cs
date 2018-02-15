@@ -7,19 +7,23 @@ using System.Drawing;
 
 namespace Snake_Projekt
 {
-    class Food : IDrawable
+    abstract class Food : IDrawable
     {
         Pen pen;
         int points;
         Point position;
+        PlayField playField;
 
-        public Food(Point position, PlayField playField)
+        public Food(Point position, PlayField playField, Pen color)
         {
+            this.position = position;
+            this.playField = playField;
+            this.pen = color;
         }
 
         public void Draw(Renderer renderer)
         {
-            throw new NotImplementedException();
+            renderer.DrawAt(position.X, position.Y, pen);
         }
     }
 }

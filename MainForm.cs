@@ -24,6 +24,7 @@ namespace Snake_Projekt
 
         private void Initialize()
         {
+            DoubleBuffered = true;
             this.Paint += new PaintEventHandler(Draw);
 
             pf = new PlayField(1);

@@ -9,7 +9,7 @@ namespace Snake_Projekt
 {
     class StandardFood : Food
     {
-        public StandardFood(Point position, PlayField playField) : base(position, playField)
+        public StandardFood(Point position, PlayField playField) : base(position, playField, Pens.DarkBlue)
         {
         }
     }
