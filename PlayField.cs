@@ -37,7 +37,7 @@ namespace Snake_Projekt
             throw new NotImplementedException();
         }
 
-        private void Draw(Renderer renderer)
+        public void Draw(Renderer renderer)
         {
             foreach(var player in Players)
             {

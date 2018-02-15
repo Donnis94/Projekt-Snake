@@ -13,8 +13,8 @@ namespace Snake_Projekt
     public partial class MainForm : Form
     {
         PlayField pf;
-        Renderer r;
         Timer timer;
+        Renderer r;
 
         public MainForm()
         {
@@ -26,8 +26,10 @@ namespace Snake_Projekt
         {
             this.Paint += new PaintEventHandler(Draw);
 
-            pf = new PlayField(1, new Renderer(this.CreateGraphics()));
+            pf = new PlayField(1);
+            r = new Renderer(this.CreateGraphics());
 
+            timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);
             timer.Interval = 1000 / 25;
             timer.Start();
@@ -37,10 +39,7 @@ namespace Snake_Projekt
 
         private void Draw(Object obj, PaintEventArgs args)
         {
-            r.DrawAt(1, 1, Pens.Black);
-            r.DrawAt(0, 0, Pens.Black);
-            r.DrawAt(1, 0, Pens.Black);
-            r.DrawAt(0, 1, Pens.Black);
+            pf.Draw(r);
         }
 
         private void TimerEventHandler(Object obj, EventArgs args)

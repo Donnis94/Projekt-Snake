@@ -29,6 +29,9 @@ namespace Snake_Projekt
             this.controller = controller;
             this.color = color;
             score = 0;
+
+            body.Add(new SnakeBody(new Point(2, 2), this));
+            body.Add(new SnakeBody(new Point(3, 2), this));
         }
         public void Move (Direction direction)
         {
