@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake_Projekt
 {
-    class Player
+    class Hey
     {
-        private int score;
-        
     }
 }
