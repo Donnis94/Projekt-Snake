@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake_Projekt
 {
-    class Renderer
+    public class Renderer
     {
         
     }

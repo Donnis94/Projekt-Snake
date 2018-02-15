@@ -9,6 +9,6 @@ namespace Snake_Projekt
 {
 	public interface IDrawable
 	{
-        void Draw(Graphics g);
+        void Draw(Renderer renderer);
 	}
 }
