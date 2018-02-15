@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake_Projekt
 {
-    class HelloWorld
+    class StandardFood : Food
     {
-        //Remove this.
-
-        //Just testing
     }
 }
