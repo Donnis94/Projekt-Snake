@@ -50,11 +50,12 @@ namespace Snake_Projekt
         {
 
         }
-        public void draw()
+        public void Draw(Renderer renderer)
         {
-
+            for (int i = 0; i < body.Count; i++)
+            {
+                body[i].Draw(renderer);
+            }
         }
-
-        
     }
 }
