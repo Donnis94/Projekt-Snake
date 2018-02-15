@@ -8,8 +8,6 @@ namespace Snake_Projekt
 {
     class HelloWorld
     {
-        //Remove this.
-
-        //Just testing
+        Console.WriteLine("Hello");
     }
 }
