@@ -16,7 +16,6 @@ namespace Snake_Projekt
         public PlayField(int AmountOfPlayers, Renderer renderer)
         {
             timer = new Timer();
-            
         }
         
         public void Run()
