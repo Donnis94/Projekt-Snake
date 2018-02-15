@@ -24,9 +24,9 @@ namespace Snake_Projekt
             this.Paint += new PaintEventHandler(Draw);
             this.MouseClick += new MouseEventHandler(Form1_MouseClick);
             r = new Renderer(this.CreateGraphics());
-            
 
-
+            //Create new play field; Send in player count and a new renderer;
+            //Later move it to a new function since we want to choose player count before starting
         }
 
         private void Draw(Object obj, PaintEventArgs args)
