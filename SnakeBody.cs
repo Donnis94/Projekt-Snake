@@ -12,7 +12,7 @@ namespace Snake_Projekt
         Pen pen = new Pen(Color.Black);
         
 
-        public void Draw(Graphics g)
+        public void Draw(Renderer renderer)
         {
             
         }
