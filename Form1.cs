@@ -12,6 +12,7 @@ namespace Snake_Projekt
 {
     public partial class Form1 : Form
     {
+        Renderer r;
         public Form1()
         {
             InitializeComponent();
@@ -22,16 +23,14 @@ namespace Snake_Projekt
         {
             this.Paint += new PaintEventHandler(Draw);
             this.MouseClick += new MouseEventHandler(Form1_MouseClick);
-            Renderer r = new Renderer(this.CreateGraphics());
-
-            r.DrawAt(3, 3, Pens.Black);
+            r = new Renderer(this.CreateGraphics());
+            
 
 
         }
 
         private void Draw(Object obj, PaintEventArgs args)
         {
-            Renderer r = new Renderer(args.Graphics);
             r.DrawAt(1, 1, Pens.Black);
             r.DrawAt(0, 0, Pens.Black);
             r.DrawAt(1, 0, Pens.Black);
