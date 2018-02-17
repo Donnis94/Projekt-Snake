@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Snake_Projekt
 {
@@ -16,7 +17,9 @@ namespace Snake_Projekt
         Point point;
         private int size;
         public enum Direction { up, down, left, right };
+        private Direction currentDirection;
         private int speed = 10;
+        
         Color color
         {
             set;
@@ -38,18 +41,67 @@ namespace Snake_Projekt
 
         }
 
+        public void ControllerInput(Keys key)
+        {
+            controller.ValidMove(key);
+        }
+
         public void Move()
         {
             for (int i = body.Count - 1; i > 0; i--)
                 body[i].position = body[i - 1].position;
 
-            body[0].position = new Point(body[0].position.X + 1, body[0].position.Y);
+
+            MoveSnakeHead();
         }
 
-        public void isValidMove(Direction direction)
+        private void MoveSnakeHead()
         {
+            if (!isValidMove())
+            {
+                controller.direction = currentDirection;
+            }
+            switch (controller.direction)
+            {
+                case Snake.Direction.left:
+                    body[0].position = new Point(body[0].position.X - 1, body[0].position.Y);
+                    break;
+                case Snake.Direction.right:
+                    body[0].position = new Point(body[0].position.X + 1, body[0].position.Y);
+                    break;
+                case Snake.Direction.up:
+                    body[0].position = new Point(body[0].position.X, body[0].position.Y - 1);
+                    break;
+                case Snake.Direction.down:
+                    body[0].position = new Point(body[0].position.X, body[0].position.Y + 1);
+                    break;
+            }
 
+            currentDirection = controller.direction;
+        }
 
+        public bool isValidMove()
+        {
+            if (currentDirection == Direction.down && controller.direction == Direction.up)
+            {
+                return false;
+            }
+
+            if (currentDirection == Direction.up && controller.direction == Direction.down)
+            {
+                return false;
+            }
+            if (currentDirection == Direction.right && controller.direction == Direction.left)
+            {
+                return false;
+            }
+
+            if (currentDirection == Direction.left && controller.direction == Direction.right)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public void expand()

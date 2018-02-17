@@ -15,7 +15,7 @@ namespace Snake_Projekt
 
         public PlayField(int AmountOfPlayers)
         {
-            Players.Add(new Snake(1, 1, 2, null, System.Drawing.Color.AliceBlue));
+            Players.Add(new Snake(1, 1, 2, new Controller(), System.Drawing.Color.AliceBlue));
             Food.Add(new SpeedyFood(new Point(3, 4), this));
             Food.Add(new SpeedyFood(new Point(5, 6), this));
             Food.Add(new StandardFood(new Point(7, 7), this));
@@ -74,6 +74,14 @@ namespace Snake_Projekt
             {
                 // Stop game somehow.
             }
+        }
+
+        public void MainForm_KeyPress(object sender, KeyEventArgs e)
+        {
+                foreach (var player in Players)
+                {
+                    player.ControllerInput(e.KeyCode);
+                }
         }
     }
 }

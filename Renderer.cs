@@ -16,10 +16,10 @@ namespace Snake_Projekt
             drawArea = g;
         }
 
-        public void DrawAt(int x, int y, Pen p)
+        public void DrawAt(int x, int y, Brush b)
         {
             int magicTileNumber = 32; //Make less magical in the future
-            drawArea.DrawRectangle(p, x * magicTileNumber, y * magicTileNumber, magicTileNumber, magicTileNumber);
+            drawArea.FillRectangle(b, x * magicTileNumber, y * magicTileNumber, magicTileNumber, magicTileNumber);
         }
     }
 }

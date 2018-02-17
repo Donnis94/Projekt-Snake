@@ -9,7 +9,7 @@ namespace Snake_Projekt
 {
     class SnakeBody : IDrawable
     {
-        Pen pen = new Pen(Color.Black);
+        Brush brush = new SolidBrush(Color.Black);
 
         Snake mySnake { get; }
         public Point position { get; set; }
@@ -22,7 +22,7 @@ namespace Snake_Projekt
 
         public void Draw(Renderer renderer)
         {
-            renderer.DrawAt(position.X, position.Y, pen);
+            renderer.DrawAt(position.X, position.Y, brush);
         }
 
     }

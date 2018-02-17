@@ -15,23 +15,31 @@ namespace Snake_Projekt
         PlayField pf;
         Timer timer;
         Renderer r;
+        
+        
 
         public MainForm()
         {
+            Width = 800;
+            Height = 600;
+            BackColor = Color.Black;
             InitializeComponent();
             Initialize();
+            KeyDown += pf.MainForm_KeyPress;
         }
 
         private void Initialize()
         {
             this.Paint += new PaintEventHandler(Draw);
+            
+
 
             pf = new PlayField(1);
             r = new Renderer(this.CreateGraphics());
 
             timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000 / 2;
+            timer.Interval = 1000 / 1;
             timer.Start();
 
 

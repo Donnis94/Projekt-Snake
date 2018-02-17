@@ -9,21 +9,21 @@ namespace Snake_Projekt
 {
     abstract class Food : IDrawable
     {
-        Pen pen;
+        Brush brush;
         int points;
         Point position;
         PlayField playField;
 
-        public Food(Point position, PlayField playField, Pen color)
+        public Food(Point position, PlayField playField, Brush brush)
         {
             this.position = position;
             this.playField = playField;
-            this.pen = color;
+            this.brush = brush;
         }
 
         public void Draw(Renderer renderer)
         {
-            renderer.DrawAt(position.X, position.Y, pen);
+            renderer.DrawAt(position.X, position.Y, brush);
         }
     }
     
