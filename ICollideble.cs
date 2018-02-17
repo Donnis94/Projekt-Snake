@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Snake_Projekt
 {
-    class Player
+    interface ICollideble
     {
-        private int score;
-        private int highscore;
-        
+        void CollisionEffect(SnakeBody sb);
     }
 }
