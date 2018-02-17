@@ -17,10 +17,14 @@ namespace Snake_Projekt
         public PlayField(int AmountOfPlayers)
         {
             Players.Add(new Snake(1, 1, 5, new Controller3(), Brushes.DarkCyan));
-            Food.Add(new SpeedyFood(new Point(3, 4), this));
-            Food.Add(new SpeedyFood(new Point(5, 6), this));
-            Food.Add(new StandardFood(new Point(7, 7), this));
-            Food.Add(new ValuableFood(new Point(0, 0), this));
+            //Food.Add(new SpeedyFood(new Point(3, 4), this));
+            //Food.Add(new SpeedyFood(new Point(5, 6), this));
+            //Food.Add(new StandardFood(new Point(7, 7), this));
+            Food.Add(new ValuableFood(new Point(3, 4), this));
+            Food.Add(new ValuableFood(new Point(5, 6), this));
+            Food.Add(new ValuableFood(new Point(7, 7), this));
+            Food.Add(new ValuableFood(new Point(1, 2), this));
+            Food.Add(new ValuableFood(new Point(5, 7), this));
             
         }
 
