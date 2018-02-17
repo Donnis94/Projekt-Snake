@@ -12,7 +12,7 @@ namespace Snake_Projekt
         Brush brush;
         int points;
         int growth;
-        Point position;
+        public Point position { get; set; }
         PlayField playField;
 
         public Food(Point position, PlayField playField, Brush brush)
