@@ -11,6 +11,8 @@ namespace Snake_Projekt
     {
         public StandardFood(Point position, PlayField playField) : base(position, playField, Brushes.DarkBlue)
         {
+            points = 1;
+            growth = 1;
         }
     }
 }

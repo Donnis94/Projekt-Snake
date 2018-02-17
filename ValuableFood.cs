@@ -11,6 +11,8 @@ namespace Snake_Projekt
     {
         public ValuableFood(Point position, PlayField playField) : base(position, playField, Brushes.DarkGray)
         {
+            points = 5;
+            growth = 2;
         }
     }
 }
