@@ -7,29 +7,12 @@ using System.Windows.Forms;
 
 namespace Snake_Projekt
 {
-    class Controller
+    abstract class Controller
     {
        
         public Snake.Direction direction;
 
-        public void ValidMove(Keys key)
-        {
-            switch (key)
-            {
-                case Keys.Left:
-                    direction = Snake.Direction.left;
-                    break;
-                case Keys.Right:
-                    direction = Snake.Direction.right;
-                    break;
-                case Keys.Up:
-                    direction = Snake.Direction.up;
-                    break;
-                case Keys.Down:
-                    direction = Snake.Direction.down;
-                    break;
-            }
-        }
+        public abstract void ValidMove(Keys key);
 
     }
 }

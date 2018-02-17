@@ -16,7 +16,7 @@ namespace Snake_Projekt
 
         public PlayField(int AmountOfPlayers)
         {
-            Players.Add(new Snake(1, 1, 5, new Controller(), Brushes.DarkCyan));
+            Players.Add(new Snake(1, 1, 5, new Controller3(), Brushes.DarkCyan));
             Food.Add(new SpeedyFood(new Point(3, 4), this));
             Food.Add(new SpeedyFood(new Point(5, 6), this));
             Food.Add(new StandardFood(new Point(7, 7), this));
