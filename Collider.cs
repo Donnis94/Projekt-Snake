@@ -8,5 +8,15 @@ namespace Snake_Projekt
 {
     class Collider
     {
+        ICollideble[,] collidables;
+
+        public Collider()
+        {
+            collidables = new ICollideble[10, 10];
+        }
+
+        public void EnterCollidableObject(ICollideble objectsToCollide)
+        {
+        }
     }
 }

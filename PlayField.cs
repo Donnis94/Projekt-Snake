@@ -20,6 +20,8 @@ namespace Snake_Projekt
             Food.Add(new SpeedyFood(new Point(5, 6), this));
             Food.Add(new StandardFood(new Point(7, 7), this));
             Food.Add(new ValuableFood(new Point(0, 0), this));
+            Collider coliderMatrix = new Collider();
+            coliderMatrix
         }
 
         public void GameLoop()
