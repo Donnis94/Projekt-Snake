@@ -9,7 +9,7 @@ namespace Snake_Projekt
 {
     class SnakeBody : IDrawable, ICollideble
     {
-        Snake mySnake { get; }
+        public Snake mySnake { get; }
         public Point position { get; set; }
 
         public SnakeBody(Point _position, Snake _mySnake)

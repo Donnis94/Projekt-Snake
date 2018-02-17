@@ -109,6 +109,11 @@ namespace Snake_Projekt
                 body.Add(new SnakeBody(body[body.Count - 1].position, this));//need to set the actual position of the last bodypart
         }
 
+        public void addScore(int extra)
+        {
+            this.score += extra;
+        }
+
         public List<SnakeBody> getHead()
         {
             return this.body;
