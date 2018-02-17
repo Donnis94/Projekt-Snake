@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Snake_Projekt
 {
-    abstract class Food : IDrawable
+    abstract class Food : IDrawable, ICollideble
     {
         Brush brush;
         int points;
@@ -24,6 +24,11 @@ namespace Snake_Projekt
         public void Draw(Renderer renderer)
         {
             renderer.DrawAt(position.X, position.Y, brush);
+        }
+
+        public void CollisionEffect(SnakeBody sb)
+        {
+            throw new NotImplementedException();
         }
     }
     

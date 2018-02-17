@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Snake_Projekt
 {
-    class SnakeBody : IDrawable
+    class SnakeBody : IDrawable, ICollideble
     {
         Snake mySnake { get; }
         public Point position { get; set; }
@@ -26,6 +26,11 @@ namespace Snake_Projekt
         public void Draw(Renderer renderer)
         {
             renderer.DrawAt(position.X, position.Y, Brushes.Black);
+        }
+
+        public void CollisionEffect(SnakeBody sb)
+        {
+            throw new NotImplementedException();
         }
     }
 }
