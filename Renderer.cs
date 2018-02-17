@@ -18,7 +18,7 @@ namespace Snake_Projekt
 
         public void DrawAt(int x, int y, Brush b)
         {
-            int magicTileNumber = 32; //Make less magical in the future
+            int magicTileNumber = 8; //Make less magical in the future
             drawArea.FillRectangle(b, x * magicTileNumber, y * magicTileNumber, magicTileNumber, magicTileNumber);
         }
     }

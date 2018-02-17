@@ -25,24 +25,40 @@ namespace Snake_Projekt
             BackColor = Color.Black;
             InitializeComponent();
             Initialize();
+            //InitializeGUI();
             KeyDown += pf.MainForm_KeyPress;
         }
 
         private void Initialize()
         {
             this.Paint += new PaintEventHandler(Draw);
-            
-
 
             pf = new PlayField(1);
             r = new Renderer(this.CreateGraphics());
 
             timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000 / 1;
+            timer.Interval = 1000 / 20;
             timer.Start();
 
+        }
 
+        private void InitializeGUI()
+        {
+
+            FlowLayoutPanel mainPanel = new FlowLayoutPanel();
+            FlowLayoutPanel flowPanel = new FlowLayoutPanel();
+
+            mainPanel.BackColor = Color.ForestGreen;
+            
+            mainPanel.Dock = DockStyle.Bottom;
+
+            flowPanel.Dock = DockStyle.Fill;
+            flowPanel.BackColor = Color.Aqua;
+
+            this.Controls.Add(mainPanel);
+            this.Controls.Add(flowPanel);
+            r = new Renderer(flowPanel.CreateGraphics());
         }
 
         private void Draw(Object obj, PaintEventArgs args)
