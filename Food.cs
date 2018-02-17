@@ -29,7 +29,7 @@ namespace Snake_Projekt
 
         public void CollisionEffect(SnakeBody sb)
         {
-            throw new NotImplementedException();
+            playField.;
         }
     }
     
