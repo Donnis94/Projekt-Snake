@@ -9,8 +9,6 @@ namespace Snake_Projekt
 {
     class SnakeBody : IDrawable
     {
-        Brush brush = new SolidBrush(Color.Black);
-
         Snake mySnake { get; }
         public Point position { get; set; }
 
@@ -20,10 +18,14 @@ namespace Snake_Projekt
             position = _position;
         }
 
-        public void Draw(Renderer renderer)
+        public void Draw(Renderer renderer, Brush b)
         {
-            renderer.DrawAt(position.X, position.Y, brush);
+            renderer.DrawAt(position.X, position.Y, b);
         }
 
+        public void Draw(Renderer renderer)
+        {
+            renderer.DrawAt(position.X, position.Y, Brushes.Black);
+        }
     }
 }

@@ -20,19 +20,19 @@ namespace Snake_Projekt
         private Direction currentDirection;
         private int speed = 10;
         
-        Color color
+        Brush brush
         {
             set;
             get;
         }
 
-        public Snake(int x, int y, int size, Controller controller, Color color) : this(new Point(x, y), size, controller, color) { }
-        public Snake(Point point, int size, Controller controller, Color color)
+        public Snake(int x, int y, int size, Controller controller, Brush color) : this(new Point(x, y), size, controller, color) { }
+        public Snake(Point point, int size, Controller controller, Brush color)
         {
             this.point = point;
             this.size = size;
             this.controller = controller;
-            this.color = color;
+            this.brush = color;
             this.score = 0;
             this.isAlive = true;
             body.Add(new SnakeBody(point, this));
@@ -140,7 +140,7 @@ namespace Snake_Projekt
         {
             for (int i = 0; i < body.Count; i++)
             {
-                body[i].Draw(renderer);
+                body[i].Draw(renderer, brush);
             }
         }
 
