@@ -11,6 +11,8 @@ namespace Snake_Projekt
     {
         public SpeedyFood(Point position, PlayField playField) : base(position, playField, Brushes.Brown)
         {
+            points = 0;
+            growth = 0;
         }
     }
 }

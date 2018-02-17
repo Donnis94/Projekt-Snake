@@ -10,8 +10,8 @@ namespace Snake_Projekt
     abstract class Food : IDrawable, ICollideble
     {
         Brush brush;
-        int points;
-        int growth;
+        protected int points;
+        protected int growth;
         public Point position { get; set; }
         PlayField playField;
 
