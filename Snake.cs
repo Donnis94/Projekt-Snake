@@ -36,8 +36,7 @@ namespace Snake_Projekt
             this.score = 0;
             this.isAlive = true;
             body.Add(new SnakeBody(point, this));
-            for (int i = 0; i < size; i++)
-                expand();
+            expand(size);
 
         }
 
@@ -104,9 +103,10 @@ namespace Snake_Projekt
             return true;
         }
 
-        public void expand()
+        public void expand(int count)
         {
-            body.Add(new SnakeBody(body[body.Count - 1].position, this));//need to set the actual position of the last bodypart
+            for (int i = 0; i < count; i++)
+                body.Add(new SnakeBody(body[body.Count - 1].position, this));//need to set the actual position of the last bodypart
         }
 
         public List<SnakeBody> getHead()
