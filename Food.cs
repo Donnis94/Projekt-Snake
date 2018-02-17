@@ -11,6 +11,7 @@ namespace Snake_Projekt
     {
         Brush brush;
         int points;
+        int growth;
         Point position;
         PlayField playField;
 
