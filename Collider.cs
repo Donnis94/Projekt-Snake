@@ -12,7 +12,7 @@ namespace Snake_Projekt
 
         public Collider()
         {
-            collidables = new ICollideble[10, 10];
+            Clear();
         }
 
         public void EnterCollidableObject(ICollideble objectsToCollide)
@@ -26,6 +26,11 @@ namespace Snake_Projekt
             {
                 collidables[snakeHead.position.X, snakeHead.position.Y].CollisionEffect(snakeHead);
             }
+        }
+
+        public void Clear()
+        {
+            collidables = new ICollideble[100, 100];
         }
 
     }

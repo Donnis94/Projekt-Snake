@@ -32,7 +32,7 @@ namespace Snake_Projekt
             sb.mySnake.addScore(points);
             sb.mySnake.expand(growth);
 
-            playField.remove(this);
+            playField.RemoveItem(this);
         }
     }
     

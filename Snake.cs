@@ -29,6 +29,7 @@ namespace Snake_Projekt
         public Snake(int x, int y, int size, Controller controller, Brush color) : this(new Point(x, y), size, controller, color) { }
         public Snake(Point point, int size, Controller controller, Brush color)
         {
+            this.currentDirection = Direction.down;
             this.point = point;
             this.size = size;
             this.controller = controller;
@@ -114,9 +115,9 @@ namespace Snake_Projekt
             this.score += extra;
         }
 
-        public List<SnakeBody> getHead()
+        public SnakeBody getHead()
         {
-            return this.body;
+            return this.body[0];
         }
 
         public void CollisionEffect()

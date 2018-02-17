@@ -12,6 +12,7 @@ namespace Snake_Projekt
     {
         ISet<Snake> Players = new HashSet<Snake>();
         ISet<Food> Food = new HashSet<Food>();
+        Collider colliderMatrix = new Collider();
 
         public PlayField(int AmountOfPlayers)
         {
@@ -20,7 +21,12 @@ namespace Snake_Projekt
             Food.Add(new SpeedyFood(new Point(5, 6), this));
             Food.Add(new StandardFood(new Point(7, 7), this));
             Food.Add(new ValuableFood(new Point(0, 0), this));
-            Collider coliderMatrix = new Collider();
+            
+        }
+
+        public void RemoveItem(Food food)
+        {
+            Food.Remove(food);
         }
 
         public void GameLoop()
@@ -49,7 +55,16 @@ namespace Snake_Projekt
 
         private void CheckCollisions()
         {
-            //throw new NotImplementedException();
+            
+            foreach (var food in Food)
+            {
+                colliderMatrix.EnterCollidableObject(food);
+            }
+
+            foreach (var snakeHead in Players)
+            {
+                colliderMatrix.SnakeHeadCollisions(snakeHead.getHead());
+            }
         }
 
         public void Draw(Renderer renderer)
