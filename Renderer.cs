@@ -31,5 +31,11 @@ namespace Snake_Projekt
             //int magicTileNumber = 16; //Make less magical in the future
             drawArea.FillRectangle(b, coordConv.toViewX(x), coordConv.toViewY(y), coordConv.scale, coordConv.scale);
         }
+
+        public void DrawAt(int x, int y, int width, int heigth, Brush b)
+        {
+            //int magicTileNumber = 16; //Make less magical in the future
+            drawArea.FillRectangle(b, coordConv.toViewX(x), coordConv.toViewY(y), width * coordConv.scale, heigth * coordConv.scale);
+        }
     }
 }
