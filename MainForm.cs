@@ -15,8 +15,11 @@ namespace Snake_Projekt
         PlayField pf;
         Timer timer;
         Renderer r;
-        
-        
+
+        private int TilesX = 50;
+        private int TilesY = 50;
+
+
 
         public MainForm()
         {
@@ -33,8 +36,8 @@ namespace Snake_Projekt
         {
             this.Paint += new PaintEventHandler(Draw);
 
-            pf = new PlayField(1);
-            r = new Renderer(this);
+            pf = new PlayField(1, TilesX, TilesY);
+            r = new Renderer(this, TilesX, TilesY);
 
             timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);

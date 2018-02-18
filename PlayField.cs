@@ -12,9 +12,9 @@ namespace Snake_Projekt
     {
         ISet<Snake> Players = new HashSet<Snake>();
         ISet<Food> Food = new HashSet<Food>();
-        Collider colliderMatrix = new Collider(50,50);
+        Collider colliderMatrix;
 
-        public PlayField(int AmountOfPlayers)
+        public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
             Players.Add(new Snake(1, 1, 5, new Controller1(), Brushes.DarkCyan));
             //Food.Add(new SpeedyFood(new Point(3, 4), this));
@@ -25,7 +25,9 @@ namespace Snake_Projekt
             Food.Add(new ValuableFood(new Point(7, 7), this));
             Food.Add(new ValuableFood(new Point(1, 2), this));
             Food.Add(new ValuableFood(new Point(5, 7), this));
-            
+
+
+            colliderMatrix = new Collider(tilesX, tilesY);
         }
 
         public void RemoveItem(Food food)

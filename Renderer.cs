@@ -14,11 +14,11 @@ namespace Snake_Projekt
         private Control drawControll;
         private Graphics drawArea;
 
-        public Renderer(Control _c)
+        public Renderer(Control _c, int tilesX, int tilesY)
         {
             drawControll = _c;
             drawArea = drawControll.CreateGraphics();
-            coordConv = new CoordinateConverter(drawControll.Size.Width, drawControll.Size.Height);
+            coordConv = new CoordinateConverter(drawControll.Size.Width, drawControll.Size.Height, tilesX, tilesY);
         }
 
         public void updateAreaSize()
