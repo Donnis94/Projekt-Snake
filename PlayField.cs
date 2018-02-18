@@ -21,8 +21,6 @@ namespace Snake_Projekt
 
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
-            Food.Add(foodFactory.ProduceFood(tilesX, tilesY, this));
-            
             Players.Add(new Snake(1, 1, 5, new Controller1(), Brushes.DarkCyan));
             //Food.Add(new SpeedyFood(new Point(3, 4), this));
             //Food.Add(new SpeedyFood(new Point(5, 6), this));
@@ -46,6 +44,7 @@ namespace Snake_Projekt
 
         public void GameLoop()
         {
+            SpawnNewFood();
             foreach (var player in Players)
             {
                 player.Move();
@@ -98,7 +97,10 @@ namespace Snake_Projekt
 
         private void SpawnNewFood()
         {
-
+            if (Food.Count < 10)
+            {
+                Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this));
+            }
         }
 
         private void EndGame()

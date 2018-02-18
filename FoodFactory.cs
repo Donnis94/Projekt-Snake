@@ -25,7 +25,7 @@ namespace Snake_Projekt
         {
                 if (Random.Next(10) == 0)
                 {
-                    Food producedFood = new StandardFood(new Point(Random.Next(XSize),Random.Next(YSize)),playField);
+                    Food producedFood = new SpeedyFood(new Point(Random.Next(XSize),Random.Next(YSize)),playField);
                     return producedFood;
                 }
                 else if (Random.Next(100) == 0)
@@ -35,7 +35,7 @@ namespace Snake_Projekt
                 }
                 else
                 {
-                    Food producedFood = new SpeedyFood(new Point(Random.Next(XSize), Random.Next(YSize)), playField);
+                    Food producedFood = new StandardFood(new Point(Random.Next(XSize), Random.Next(YSize)), playField);
                     return producedFood;
                 }
                 
