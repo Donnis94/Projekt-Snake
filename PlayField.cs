@@ -14,20 +14,23 @@ namespace Snake_Projekt
         ISet<Food> Food = new HashSet<Food>();
         Collider colliderMatrix;
 
+        private FoodFactory foodFactory = new FoodFactory();
+
         private int TilesX;
         private int TilesY;
 
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
+            Food.Add(foodFactory.ProduceFood(0, tilesX, tilesY, this));
             Players.Add(new Snake(1, 1, 5, new Controller1(), Brushes.DarkCyan));
             //Food.Add(new SpeedyFood(new Point(3, 4), this));
             //Food.Add(new SpeedyFood(new Point(5, 6), this));
             //Food.Add(new StandardFood(new Point(7, 7), this));
-            Food.Add(new ValuableFood(new Point(3, 4), this));
-            Food.Add(new ValuableFood(new Point(5, 6), this));
-            Food.Add(new ValuableFood(new Point(7, 7), this));
-            Food.Add(new ValuableFood(new Point(1, 2), this));
-            Food.Add(new ValuableFood(new Point(5, 7), this));
+            //Food.Add(new ValuableFood(new Point(3, 4), this));
+            //Food.Add(new ValuableFood(new Point(5, 6), this));
+            //Food.Add(new ValuableFood(new Point(7, 7), this));
+            //Food.Add(new ValuableFood(new Point(1, 2), this));
+            //Food.Add(new ValuableFood(new Point(5, 7), this));
 
             TilesX = tilesX;
             TilesY = tilesY;
