@@ -57,7 +57,9 @@ namespace Snake_Projekt
             mainPanel.BackColor = Color.ForestGreen;
             
             mainPanel.Dock = DockStyle.Top;
-
+            Label score = new Label();
+            score.Container.ToString();
+            mainPanel.Controls.Add(score);
             flowPanel.Dock = DockStyle.Fill;
             flowPanel.BackColor = Color.White;
 
