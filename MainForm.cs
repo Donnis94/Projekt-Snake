@@ -56,7 +56,7 @@ namespace Snake_Projekt
 
             mainPanel.BackColor = Color.ForestGreen;
             
-            mainPanel.Dock = DockStyle.Bottom;
+            mainPanel.Dock = DockStyle.Top;
 
             flowPanel.Dock = DockStyle.Fill;
             flowPanel.BackColor = Color.White;

@@ -43,7 +43,7 @@
 
         public float toViewY(float y)
         {
-            return (scale * y) + yOffset;
+            return (scale * y)+ frame + yOffset;
         }
     }
 }
