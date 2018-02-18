@@ -16,8 +16,8 @@ namespace Snake_Projekt
         Timer timer;
         Renderer r;
 
-        private int TilesX = 20;
-        private int TilesY = 20;
+        private int TilesX = 70;
+        private int TilesY = 70;
 
         public MainForm()
         {
@@ -28,6 +28,7 @@ namespace Snake_Projekt
             Initialize();
             //InitializeGUI();
             KeyDown += pf.MainForm_KeyPress;
+            Resize += MainForm_Resize;
         }
 
         private void Initialize()
@@ -71,6 +72,11 @@ namespace Snake_Projekt
         {
             pf.GameLoop();
             this.Refresh();
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            r.updateAreaSize();
         }
     }
 }
