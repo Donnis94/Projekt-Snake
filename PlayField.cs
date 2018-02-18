@@ -80,7 +80,8 @@ namespace Snake_Projekt
 
         public void Draw(Renderer renderer)
         {
-            renderer.DrawAt(0, 0, TilesX - 1, TilesY - 1, Brushes.Orange);
+            renderer.DrawAt(0, 0, TilesX, TilesY, Brushes.Orange);
+
             foreach (var player in Players)
             {
                 player.Draw(renderer);
