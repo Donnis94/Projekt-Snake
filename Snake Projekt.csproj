@@ -47,9 +47,6 @@
   <ItemGroup>
     <Compile Include="Collider.cs" />
     <Compile Include="Controller.cs" />
-    <Compile Include="Controller1.cs" />
-    <Compile Include="Controller2.cs" />
-    <Compile Include="Controller3.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="ICollideble.cs" />
     <Compile Include="MainForm.cs">
