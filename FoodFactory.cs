@@ -21,34 +21,27 @@ namespace Snake_Projekt
 
 
 
-        public Food ProduceFood(int amountOfFood, int XSize, int YSize, PlayField playField)
+        public Food ProduceFood(int XSize, int YSize, PlayField playField)
         {
-            if (amountOfFood < 10)
-            {
                 if (Random.Next(10) == 0)
                 {
-                    //Food producedFood = new StandardFood((new Point(Random.Next(XSize),Random.Next(YSize)),playField));
-                    //return producedFood;
+                    Food producedFood = new StandardFood(new Point(Random.Next(XSize),Random.Next(YSize)),playField);
+                    return producedFood;
                 }
-
-                /*
-                switch (foodToMake)
+                else if (Random.Next(100) == 0)
                 {
-                    case FoodType.SpeedyFood:
-                        Food producedFood = new SpeedyFood();
-                        return producedFood;
-                    case FoodType.StandardFood:
-                        Food producedFood = new StandardFood();
-                        return producedFood;
-                    case FoodType.ValuableFood:
-                        Food producedFood = new ValuableFood();
-                        return producedFood;
+                    Food producedFood = new ValuableFood(new Point(Random.Next(XSize),Random.Next(YSize)),playField);
+                    return producedFood;
                 }
-                */
-            }
-                return null;
+                else
+                {
+                    Food producedFood = new SpeedyFood(new Point(Random.Next(XSize), Random.Next(YSize)), playField);
+                    return producedFood;
+                }
+                
+        }
            
             
         }
-    }
 }
+
