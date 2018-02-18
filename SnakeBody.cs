@@ -30,7 +30,8 @@ namespace Snake_Projekt
 
         public void CollisionEffect(SnakeBody sb)
         {
-            throw new NotImplementedException();
+            this.mySnake.addScore(5);
+            sb.mySnake.isAlive = false;
         }
     }
 }
