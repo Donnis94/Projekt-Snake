@@ -37,7 +37,11 @@ namespace Snake_Projekt
 
         public void EnterCollidableObject(ICollideble objectsToCollide)
         {
-            collidables[objectsToCollide.position.X, objectsToCollide.position.Y] = objectsToCollide;
+            if (collidables[objectsToCollide.position.X, objectsToCollide.position.Y] == null)
+            {
+                collidables[objectsToCollide.position.X, objectsToCollide.position.Y] = objectsToCollide;
+            }
+            
         }
 
         public void SnakeHeadCollisions(SnakeBody snakeHead)
