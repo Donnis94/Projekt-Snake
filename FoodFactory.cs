@@ -27,10 +27,10 @@ namespace Snake_Projekt
             {
                 if (Random.Next(10) == 0)
                 {
-                    Food producedFood = new StandardFood((new Point(Random.Next(XSize),Random.Next(YSize)),playField));
-                    return producedFood;
+                    //Food producedFood = new StandardFood((new Point(Random.Next(XSize),Random.Next(YSize)),playField));
+                    //return producedFood;
                 }
-                
+
                 /*
                 switch (foodToMake)
                 {
@@ -46,6 +46,7 @@ namespace Snake_Projekt
                 }
                 */
             }
+                return null;
            
             
         }
