@@ -12,7 +12,7 @@ namespace Snake_Projekt
     {
         ISet<Snake> Players = new HashSet<Snake>();
         ISet<Food> Food = new HashSet<Food>();
-        Collider colliderMatrix = new Collider();
+        Collider colliderMatrix = new Collider(50,50);
 
         public PlayField(int AmountOfPlayers)
         {

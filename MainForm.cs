@@ -34,7 +34,7 @@ namespace Snake_Projekt
             this.Paint += new PaintEventHandler(Draw);
 
             pf = new PlayField(1);
-            r = new Renderer(this.CreateGraphics());
+            r = new Renderer(this);
 
             timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);
@@ -58,7 +58,7 @@ namespace Snake_Projekt
 
             this.Controls.Add(mainPanel);
             this.Controls.Add(flowPanel);
-            r = new Renderer(flowPanel.CreateGraphics());
+            //r = new Renderer(flowPanel.CreateGraphics());
         }
 
         private void Draw(Object obj, PaintEventArgs args)

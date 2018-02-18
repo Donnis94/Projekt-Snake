@@ -4,22 +4,32 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Snake_Projekt
 {
     public class Renderer
     {
-        Graphics drawArea;
+        private CoordinateConverter coordConv;
+        private Control drawControll;
+        private Graphics drawArea;
 
-        public Renderer(Graphics g)
+        public Renderer(Control _c)
         {
-            drawArea = g;
+            drawControll = _c;
+            drawArea = drawControll.CreateGraphics();
+            coordConv = new CoordinateConverter(drawControll.Size.Width, drawControll.Size.Height);
+        }
+
+        public void updateAreaSize()
+        {
+            coordConv.setDimentions(drawControll.Size.Width, drawControll.Size.Height);
         }
 
         public void DrawAt(int x, int y, Brush b)
         {
-            int magicTileNumber = 16; //Make less magical in the future
-            drawArea.FillRectangle(b, x * magicTileNumber, y * magicTileNumber, magicTileNumber, magicTileNumber);
+            //int magicTileNumber = 16; //Make less magical in the future
+            drawArea.FillRectangle(b, coordConv.toViewX(x), coordConv.toViewY(y), coordConv.scale, coordConv.scale);
         }
     }
 }
