@@ -16,6 +16,8 @@ namespace Snake_Projekt
         Timer timer;
         Renderer r;
 
+        FlowLayoutPanel flowPanel;
+
         private int TilesX = 70;
         private int TilesY = 70;
 
@@ -25,18 +27,17 @@ namespace Snake_Projekt
             Height = 600;
             BackColor = Color.Black;
             InitializeComponent();
+            InitializeGUI();
             Initialize();
-            //InitializeGUI();
             KeyDown += pf.MainForm_KeyPress;
             Resize += MainForm_Resize;
         }
 
         private void Initialize()
         {
-            this.Paint += new PaintEventHandler(Draw);
+            flowPanel.Paint += new PaintEventHandler(Draw);
 
             pf = new PlayField(1, TilesX, TilesY);
-            r = new Renderer(this, TilesX, TilesY);
 
             timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);
@@ -48,8 +49,14 @@ namespace Snake_Projekt
         private void InitializeGUI()
         {
 
+            FlowLayoutPanel tp = new FlowLayoutPanel();
+            tp.Dock = DockStyle.Fill;
+            tp.FlowDirection = FlowDirection.LeftToRight;
+            tp.AutoSize = true;
+
             FlowLayoutPanel mainPanel = new FlowLayoutPanel();
-            FlowLayoutPanel flowPanel = new FlowLayoutPanel();
+            mainPanel.Height = 100;
+            flowPanel = new FlowLayoutPanel();
 
             mainPanel.BackColor = Color.ForestGreen;
             
@@ -60,7 +67,8 @@ namespace Snake_Projekt
 
             this.Controls.Add(mainPanel);
             this.Controls.Add(flowPanel);
-            //r = new Renderer(flowPanel.CreateGraphics());
+            //this.Controls.Add(tp);
+            r = new Renderer(flowPanel, TilesX, TilesY);
         }
 
         private void Draw(Object obj, PaintEventArgs args)
@@ -71,7 +79,7 @@ namespace Snake_Projekt
         private void TimerEventHandler(Object obj, EventArgs args)
         {
             pf.GameLoop();
-            this.Refresh();
+            flowPanel.Refresh();
         }
 
         private void MainForm_Resize(object sender, EventArgs e)
