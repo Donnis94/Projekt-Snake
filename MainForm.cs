@@ -49,11 +49,6 @@ namespace Snake_Projekt
         private void InitializeGUI()
         {
 
-            FlowLayoutPanel tp = new FlowLayoutPanel();
-            tp.Dock = DockStyle.Fill;
-            tp.FlowDirection = FlowDirection.LeftToRight;
-            tp.AutoSize = true;
-
             FlowLayoutPanel mainPanel = new FlowLayoutPanel();
             mainPanel.Height = 100;
             flowPanel = new FlowLayoutPanel();
@@ -65,9 +60,8 @@ namespace Snake_Projekt
             flowPanel.Dock = DockStyle.Fill;
             flowPanel.BackColor = Color.Aqua;
 
-            this.Controls.Add(mainPanel);
             this.Controls.Add(flowPanel);
-            //this.Controls.Add(tp);
+            this.Controls.Add(mainPanel);
             r = new Renderer(flowPanel, TilesX, TilesY);
         }
 
