@@ -124,6 +124,14 @@ namespace Snake_Projekt
             return this.body[0];
         }
 
+        public void addBodyToCollider(Collider c)
+        {
+            for (int i = 1; i < body.Count; i++)
+            {
+                c.EnterCollidableObject(body[i]);
+            }
+        }
+
         public void CollisionEffect()
         {
             /*
