@@ -27,13 +27,14 @@ namespace Snake_Projekt
             renderer.DrawAt(position.X, position.Y, brush);
         }
 
-        public void CollisionEffect(SnakeBody sb)
+        public virtual void CollisionEffect(SnakeBody sb)
         {
             sb.mySnake.addScore(points);
             sb.mySnake.expand(growth);
 
             playField.RemoveItem(this);
         }
+        
     }
     
 }

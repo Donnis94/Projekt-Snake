@@ -11,24 +11,14 @@ namespace Snake_Projekt
     {
         private Random Random = new Random();
 
-        public enum FoodType
-        {
-            StandardFood,
-            SpeedyFood,
-            ValuableFood
-        };
-
-
-
-
         public Food ProduceFood(int XSize, int YSize, PlayField playField)
         {
-                if (Random.Next(10) == 0)
+                if (Random.Next(100) == 0)
                 {
                     Food producedFood = new SpeedyFood(new Point(Random.Next(XSize),Random.Next(YSize)),playField);
                     return producedFood;
                 }
-                else if (Random.Next(100) == 0)
+                else if (Random.Next(10) == 0)
                 {
                     Food producedFood = new ValuableFood(new Point(Random.Next(XSize),Random.Next(YSize)),playField);
                     return producedFood;
