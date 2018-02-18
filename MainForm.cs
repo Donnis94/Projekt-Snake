@@ -19,8 +19,6 @@ namespace Snake_Projekt
         private int TilesX = 50;
         private int TilesY = 50;
 
-
-
         public MainForm()
         {
             Width = 800;

@@ -15,6 +15,8 @@
         public CoordinateConverter(float height, float width, int tilesX, int tilesY)
         {
             setDimentions(height, width);
+            TilesX = tilesX;
+            TilesY = tilesY;
         }
 
         public void setDimentions(float width, float height)
