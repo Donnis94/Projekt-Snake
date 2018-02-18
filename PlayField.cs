@@ -69,10 +69,15 @@ namespace Snake_Projekt
 
         private void CheckCollisions()
         {
-            
+            colliderMatrix.Clear();
             foreach (var food in Food)
             {
                 colliderMatrix.EnterCollidableObject(food);
+            }
+
+            foreach (var snake in Players)
+            {
+                snake.addBodyToCollider(colliderMatrix);
             }
 
             foreach (var snakeHead in Players)
