@@ -18,13 +18,14 @@ namespace Snake_Projekt
 
         FlowLayoutPanel flowPanel;
 
-        private int TilesX = 70;
-        private int TilesY = 70;
+        private int TilesX = 50;
+        private int TilesY = 50;
 
         public MainForm()
         {
-            Width = 800;
-            Height = 600;
+            this.WindowState = FormWindowState.Maximized;
+            Width = 2000;
+            Height = 2000;
             BackColor = Color.Black;
             InitializeComponent();
             InitializeGUI();
@@ -58,7 +59,7 @@ namespace Snake_Projekt
             mainPanel.Dock = DockStyle.Bottom;
 
             flowPanel.Dock = DockStyle.Fill;
-            flowPanel.BackColor = Color.Aqua;
+            flowPanel.BackColor = Color.White;
 
             this.Controls.Add(flowPanel);
             this.Controls.Add(mainPanel);

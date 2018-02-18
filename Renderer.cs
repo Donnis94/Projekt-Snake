@@ -24,17 +24,23 @@ namespace Snake_Projekt
         public void updateAreaSize()
         {
             coordConv.setDimentions(drawControll.Size.Width, drawControll.Size.Height);
+
+            if(drawControll.Size.Width > 1200)
+            {
+                float iX = coordConv.toViewX(9);
+                float iY = coordConv.toViewY(9);
+                float scale = coordConv.scale;
+                Console.Write("");
+            }
         }
 
         public void DrawAt(int x, int y, Brush b)
         {
-            //int magicTileNumber = 16; //Make less magical in the future
             drawArea.FillRectangle(b, coordConv.toViewX(x), coordConv.toViewY(y), coordConv.scale, coordConv.scale);
         }
 
         public void DrawAt(int x, int y, int width, int heigth, Brush b)
         {
-            //int magicTileNumber = 16; //Make less magical in the future
             drawArea.FillRectangle(b, coordConv.toViewX(x), coordConv.toViewY(y), width * coordConv.scale, heigth * coordConv.scale);
         }
     }
