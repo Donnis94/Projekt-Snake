@@ -44,7 +44,7 @@ namespace Snake_Projekt
             {
                 snakeHead.mySnake.isAlive = false;
             }
-            if (collidables[snakeHead.position.X, snakeHead.position.Y] != null)
+            else if (collidables[snakeHead.position.X, snakeHead.position.Y] != null)
             {
                 collidables[snakeHead.position.X, snakeHead.position.Y].CollisionEffect(snakeHead);
             }

@@ -148,9 +148,12 @@ namespace Snake_Projekt
 
         public void Draw(Renderer renderer)
         {
+            if(isAlive)
+            {
             for (int i = 0; i < body.Count; i++)
             {
                 body[i].Draw(renderer, brush);
+            }
             }
         }
 
