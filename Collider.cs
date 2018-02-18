@@ -10,11 +10,13 @@ namespace Snake_Projekt
     {
         ICollideble[,] collidables;
 
-        private int XSize = 100;
-        private int YSize = 100;
+        private int XSize;
+        private int YSize;
 
-        public Collider()
+        public Collider(int xSize, int ySize)
         {
+            XSize = xSize;
+            YSize = ySize;
             Clear();
         }
 
@@ -25,7 +27,7 @@ namespace Snake_Projekt
                 return true;
             }
 
-            if (snakeHead.position.Y < 0 || snakeHead.position.Y >= XSize)
+            if (snakeHead.position.Y < 0 || snakeHead.position.Y >= YSize)
             {
                 return true;
             }
