@@ -13,7 +13,7 @@ namespace Snake_Projekt
         private List<SnakeBody> body = new List<SnakeBody>();
         private int score;
         private Controller controller;
-        bool isAlive = true;
+        public bool isAlive { get; set; }
         Point point;
         private int size;
         public enum Direction { up, down, left, right };
@@ -48,11 +48,15 @@ namespace Snake_Projekt
 
         public void Move()
         {
-            for (int i = body.Count - 1; i > 0; i--)
-                body[i].position = body[i - 1].position;
+            if (!isAlive)
+            {
+                return;
+            }
 
+                for (int i = body.Count - 1; i > 0; i--)
+                    body[i].position = body[i - 1].position;
 
-            MoveSnakeHead();
+                MoveSnakeHead();
         }
 
         private void MoveSnakeHead()
