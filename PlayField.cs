@@ -97,7 +97,7 @@ namespace Snake_Projekt
 
         private void SpawnNewFood()
         {
-            if (Food.Count < 10)
+            if (Food.Count < 50)
             {
                 Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this));
             }
