@@ -49,6 +49,7 @@
     <Compile Include="Controller.cs" />
     <Compile Include="CoordinateConverter.cs" />
     <Compile Include="Food.cs" />
+    <Compile Include="FoodFactory.cs" />
     <Compile Include="ICollideble.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

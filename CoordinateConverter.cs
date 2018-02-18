@@ -9,14 +9,14 @@
 
         private float frame = 20;
 
-        private float TilesX = 50;
-        private float TilesY = 50;
+        private float TilesX;
+        private float TilesY;
 
         public CoordinateConverter(float height, float width, int tilesX, int tilesY)
         {
-            setDimentions(height, width);
             TilesX = tilesX;
             TilesY = tilesY;
+            setDimentions(height, width);
         }
 
         public void setDimentions(float width, float height)

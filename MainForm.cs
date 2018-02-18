@@ -16,8 +16,8 @@ namespace Snake_Projekt
         Timer timer;
         Renderer r;
 
-        private int TilesX = 50;
-        private int TilesY = 50;
+        private int TilesX = 20;
+        private int TilesY = 20;
 
         public MainForm()
         {

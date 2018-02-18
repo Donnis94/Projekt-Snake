@@ -14,8 +14,8 @@ namespace Snake_Projekt
         ISet<Food> Food = new HashSet<Food>();
         Collider colliderMatrix;
 
-        private int TilesX = 50;
-        private int TilesY = 50;
+        private int TilesX;
+        private int TilesY;
 
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
