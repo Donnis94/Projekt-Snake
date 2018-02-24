@@ -12,7 +12,7 @@ namespace Snake_Projekt
     {
         private List<SnakeBody> body = new List<SnakeBody>();
         private int score;
-        
+
         private Controller controller;
         private Direction currentDirection;
         public bool isAlive { get; set; }
@@ -111,6 +111,11 @@ namespace Snake_Projekt
             {
                 c.EnterCollidableObject(body[i]);
             }
+        }
+
+        public int GetScore()
+        {
+            return this.score;
         }
 
         public void Draw(Renderer renderer)

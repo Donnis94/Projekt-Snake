@@ -15,6 +15,8 @@ namespace Snake_Projekt
         Collider colliderMatrix;
         private Random Random = new Random();
 
+        
+
         private FoodFactory foodFactory = new FoodFactory();
 
         private int TilesX;
@@ -117,6 +119,25 @@ namespace Snake_Projekt
                     Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
                 
             }
+        }
+
+        public int GetPlayerScore(int playerScore)
+        {
+            
+            switch (playerScore)
+            {
+                case 1:
+                    return Players.ElementAt(0).GetScore();
+                    break;
+                case 2:
+                    return Players.ElementAt(1).GetScore();
+                    break;
+                case 3:
+                    return Players.ElementAt(2).GetScore();
+                    break;
+            }
+
+            return 0;
         }
 
         private void EndGame()

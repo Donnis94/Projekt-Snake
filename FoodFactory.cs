@@ -18,12 +18,15 @@ namespace Snake_Projekt
             int XCoor = Random.Next(XSize);
             int YCoor = Random.Next(YSize);
             bool TileAvailable = collider.IsTileEmpty(XCoor, YCoor);
+            int EmptyTileChecks = 0;
 
             while (!TileAvailable)
             {
                 XCoor = Random.Next(XSize);
                 YCoor = Random.Next(YSize);
                 TileAvailable = collider.IsTileEmpty(XCoor, YCoor);
+                if (EmptyTileChecks++ == 1000)
+                    break;
             }
             
                 if (food == FoodType.SpeedyFood)
