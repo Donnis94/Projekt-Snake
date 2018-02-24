@@ -13,6 +13,7 @@ namespace Snake_Projekt
         ISet<Snake> Players = new HashSet<Snake>();
         ISet<Food> Food = new HashSet<Food>();
         Collider colliderMatrix;
+        private Random Random = new Random();
 
         private FoodFactory foodFactory = new FoodFactory();
 
@@ -44,13 +45,13 @@ namespace Snake_Projekt
 
         public void GameLoop()
         {
-            SpawnNewFood();
+            
             foreach (var player in Players)
             {
                 player.Move();
             }
             CheckCollisions();
-
+            SpawnNewFood();
             if (IsGameOver())
             {
 
@@ -104,12 +105,17 @@ namespace Snake_Projekt
         {
             if (Food.Count < 20)
             {
-                if(StandardFood.AmountOfStandardFood < 10)
-                Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this));
-                else if(ValuableFood.AmountOfValuableFood < 8)
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this));
+                if (Random.Next(100) == 0)
+                {
+                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.SpeedyFood));
+                }
+                else if (Random.Next(50) == 0)
+                {
+                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.ValuableFood));
+                }
                 else
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this));
+                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.StandardFood));
+                
             }
         }
 

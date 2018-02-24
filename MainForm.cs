@@ -36,7 +36,7 @@ namespace Snake_Projekt
         private void Initialize()
         {
             MainForm_Label.Paint += new PaintEventHandler(Draw);
-
+            
             pf = new PlayField(1, TilesX, TilesY);
             r = new Renderer(MainForm_Label, TilesX, TilesY);
             timer = new Timer();

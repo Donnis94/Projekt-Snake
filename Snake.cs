@@ -12,6 +12,7 @@ namespace Snake_Projekt
     {
         private List<SnakeBody> body = new List<SnakeBody>();
         private int score;
+        
         private Controller controller;
         public bool isAlive { get; set; }
         Point point;
