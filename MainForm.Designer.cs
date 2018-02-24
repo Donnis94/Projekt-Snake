@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.MainForm_Label = new System.Windows.Forms.FlowLayoutPanel();
+            this.Player3_Score_Label = new System.Windows.Forms.Label();
+            this.Player2_Score_Label = new System.Windows.Forms.Label();
+            this.Player3_Name_Label = new System.Windows.Forms.Label();
+            this.Player2_Name_Label = new System.Windows.Forms.Label();
             this.Player1_Name_Label = new System.Windows.Forms.Label();
             this.Player1_ScoreLabel = new System.Windows.Forms.Label();
-            this.Player2_Name_Label = new System.Windows.Forms.Label();
-            this.Player3_Name_Label = new System.Windows.Forms.Label();
-            this.Player2_Score_Label = new System.Windows.Forms.Label();
-            this.Player3_Score_Label = new System.Windows.Forms.Label();
+            this.MainForm_Label = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,24 +58,55 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 100);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // MainForm_Label
+            // Player3_Score_Label
             // 
-            this.MainForm_Label.BackColor = System.Drawing.SystemColors.Highlight;
-            this.MainForm_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainForm_Label.Location = new System.Drawing.Point(0, 100);
-            this.MainForm_Label.Name = "MainForm_Label";
-            this.MainForm_Label.Size = new System.Drawing.Size(1370, 649);
-            this.MainForm_Label.TabIndex = 1;
+            this.Player3_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Player3_Score_Label.Location = new System.Drawing.Point(525, 50);
+            this.Player3_Score_Label.Name = "Player3_Score_Label";
+            this.Player3_Score_Label.Size = new System.Drawing.Size(256, 50);
+            this.Player3_Score_Label.TabIndex = 5;
+            this.Player3_Score_Label.Text = "0";
+            this.Player3_Score_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Player2_Score_Label
+            // 
+            this.Player2_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Player2_Score_Label.Location = new System.Drawing.Point(264, 50);
+            this.Player2_Score_Label.Name = "Player2_Score_Label";
+            this.Player2_Score_Label.Size = new System.Drawing.Size(255, 50);
+            this.Player2_Score_Label.TabIndex = 4;
+            this.Player2_Score_Label.Text = "0";
+            this.Player2_Score_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Player3_Name_Label
+            // 
+            this.Player3_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Player3_Name_Label.Location = new System.Drawing.Point(525, 0);
+            this.Player3_Name_Label.Name = "Player3_Name_Label";
+            this.Player3_Name_Label.Size = new System.Drawing.Size(256, 50);
+            this.Player3_Name_Label.TabIndex = 3;
+            this.Player3_Name_Label.Text = "Player 3";
+            this.Player3_Name_Label.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // Player2_Name_Label
+            // 
+            this.Player2_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Player2_Name_Label.Location = new System.Drawing.Point(264, 0);
+            this.Player2_Name_Label.Name = "Player2_Name_Label";
+            this.Player2_Name_Label.Size = new System.Drawing.Size(255, 50);
+            this.Player2_Name_Label.TabIndex = 2;
+            this.Player2_Name_Label.Text = "Player 2";
+            this.Player2_Name_Label.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // Player1_Name_Label
             // 
             this.Player1_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Player1_Name_Label.Location = new System.Drawing.Point(3, 0);
             this.Player1_Name_Label.Name = "Player1_Name_Label";
-            this.Player1_Name_Label.Size = new System.Drawing.Size(450, 50);
+            this.Player1_Name_Label.Size = new System.Drawing.Size(255, 50);
             this.Player1_Name_Label.TabIndex = 0;
             this.Player1_Name_Label.Text = "Player 1";
             this.Player1_Name_Label.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -85,56 +116,25 @@
             this.Player1_ScoreLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Player1_ScoreLabel.Location = new System.Drawing.Point(3, 50);
             this.Player1_ScoreLabel.Name = "Player1_ScoreLabel";
-            this.Player1_ScoreLabel.Size = new System.Drawing.Size(450, 50);
+            this.Player1_ScoreLabel.Size = new System.Drawing.Size(255, 50);
             this.Player1_ScoreLabel.TabIndex = 1;
             this.Player1_ScoreLabel.Text = "0";
             this.Player1_ScoreLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Player2_Name_Label
+            // MainForm_Label
             // 
-            this.Player2_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Player2_Name_Label.Location = new System.Drawing.Point(459, 0);
-            this.Player2_Name_Label.Name = "Player2_Name_Label";
-            this.Player2_Name_Label.Size = new System.Drawing.Size(450, 50);
-            this.Player2_Name_Label.TabIndex = 2;
-            this.Player2_Name_Label.Text = "Player 2";
-            this.Player2_Name_Label.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // Player3_Name_Label
-            // 
-            this.Player3_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Player3_Name_Label.Location = new System.Drawing.Point(915, 0);
-            this.Player3_Name_Label.Name = "Player3_Name_Label";
-            this.Player3_Name_Label.Size = new System.Drawing.Size(452, 50);
-            this.Player3_Name_Label.TabIndex = 3;
-            this.Player3_Name_Label.Text = "Player 3";
-            this.Player3_Name_Label.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // Player2_Score_Label
-            // 
-            this.Player2_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Player2_Score_Label.Location = new System.Drawing.Point(459, 50);
-            this.Player2_Score_Label.Name = "Player2_Score_Label";
-            this.Player2_Score_Label.Size = new System.Drawing.Size(450, 50);
-            this.Player2_Score_Label.TabIndex = 4;
-            this.Player2_Score_Label.Text = "0";
-            this.Player2_Score_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Player3_Score_Label
-            // 
-            this.Player3_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Player3_Score_Label.Location = new System.Drawing.Point(915, 50);
-            this.Player3_Score_Label.Name = "Player3_Score_Label";
-            this.Player3_Score_Label.Size = new System.Drawing.Size(452, 50);
-            this.Player3_Score_Label.TabIndex = 5;
-            this.Player3_Score_Label.Text = "0";
-            this.Player3_Score_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MainForm_Label.BackColor = System.Drawing.SystemColors.Highlight;
+            this.MainForm_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainForm_Label.Location = new System.Drawing.Point(0, 100);
+            this.MainForm_Label.Name = "MainForm_Label";
+            this.MainForm_Label.Size = new System.Drawing.Size(784, 461);
+            this.MainForm_Label.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.MainForm_Label);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainForm";
