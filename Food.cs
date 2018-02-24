@@ -36,5 +36,60 @@ namespace Snake_Projekt
         }
         
     }
-    
+
+    class ValuableFood : Food
+    {
+        public static int AmountOfValuableFood;
+
+        public ValuableFood(Point position, PlayField playField) : base(position, playField, Brushes.DarkGray)
+        {
+            AmountOfValuableFood++;
+            points = 5;
+            growth = 2;
+        }
+
+        public override void CollisionEffect(SnakeBody sb)
+        {
+            base.CollisionEffect(sb);
+            AmountOfValuableFood--;
+        }
+    }
+
+    class StandardFood : Food
+    {
+        public static int AmountOfStandardFood;
+
+        public StandardFood(Point position, PlayField playField) : base(position, playField, Brushes.DarkBlue)
+        {
+            AmountOfStandardFood++;
+            points = 1;
+            growth = 1;
+        }
+
+        public override void CollisionEffect(SnakeBody sb)
+        {
+            base.CollisionEffect(sb);
+            AmountOfStandardFood--;
+        }
+
+    }
+
+    class SpeedyFood : Food
+    {
+        public static int AmountOfSpeedyFood;
+
+        public SpeedyFood(Point position, PlayField playField) : base(position, playField, Brushes.Brown)
+        {
+            AmountOfSpeedyFood++;
+            points = 0;
+            growth = 0;
+        }
+
+        public override void CollisionEffect(SnakeBody sb)
+        {
+            base.CollisionEffect(sb);
+            AmountOfSpeedyFood--;
+        }
+    }
+
 }
