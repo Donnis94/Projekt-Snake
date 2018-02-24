@@ -19,7 +19,7 @@ namespace Snake_Projekt
         public enum Direction { up, down, left, right };
         private Direction currentDirection;
         private int speed = 10;
-        
+
         Brush brush
         {
             set;
@@ -53,10 +53,10 @@ namespace Snake_Projekt
                 return;
             }
 
-                for (int i = body.Count - 1; i > 0; i--)
-                    body[i].position = body[i - 1].position;
+            for (int i = body.Count - 1; i > 0; i--)
+                body[i].MoveTo(body[i - 1]);
 
-                MoveSnakeHead();
+            MoveSnakeHead();
         }
 
         private void MoveSnakeHead()
@@ -65,21 +65,8 @@ namespace Snake_Projekt
             {
                 controller.direction = currentDirection;
             }
-            switch (controller.direction)
-            {
-                case Snake.Direction.left:
-                    body[0].position = new Point(body[0].position.X - 1, body[0].position.Y);
-                    break;
-                case Snake.Direction.right:
-                    body[0].position = new Point(body[0].position.X + 1, body[0].position.Y);
-                    break;
-                case Snake.Direction.up:
-                    body[0].position = new Point(body[0].position.X, body[0].position.Y - 1);
-                    break;
-                case Snake.Direction.down:
-                    body[0].position = new Point(body[0].position.X, body[0].position.Y + 1);
-                    break;
-            }
+
+            body[0].MoveInDirection(controller.direction);
 
             currentDirection = controller.direction;
         }
@@ -156,12 +143,12 @@ namespace Snake_Projekt
 
         public void Draw(Renderer renderer)
         {
-            if(isAlive)
+            if (isAlive)
             {
-            for (int i = 0; i < body.Count; i++)
-            {
-                body[i].Draw(renderer, brush);
-            }
+                for (int i = 0; i < body.Count; i++)
+                {
+                    body[i].Draw(renderer, brush);
+                }
             }
         }
 
