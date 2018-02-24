@@ -107,14 +107,14 @@ namespace Snake_Projekt
             {
                 if (Random.Next(100) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.SpeedyFood));
+                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.ValuableFood));
+                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.ValuableFood, colliderMatrix));
                 }
                 else
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.StandardFood));
+                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
                 
             }
         }

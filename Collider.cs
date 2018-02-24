@@ -56,6 +56,11 @@ namespace Snake_Projekt
             }
         }
 
+        public bool IsTileEmpty(int x, int y)
+        {
+            return collidables[x, y] == null;
+        }
+
         public void Clear()
         {
             collidables = new ICollideble[XSize, YSize];
