@@ -13,7 +13,8 @@ namespace Snake_Projekt
         protected int points;
         protected int growth;
         public Point position { get; set; }
-        PlayField playField;
+        protected PlayField playField;
+        private Random Random = new Random();
 
         public Food(Point position, PlayField playField, Brush brush)
         {
@@ -88,6 +89,7 @@ namespace Snake_Projekt
         public override void CollisionEffect(SnakeBody sb)
         {
             base.CollisionEffect(sb);
+            sb.mySnake.isSpeedy = true;
             AmountOfSpeedyFood--;
         }
     }

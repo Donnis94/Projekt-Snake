@@ -16,8 +16,6 @@ namespace Snake_Projekt
         Timer timer;
         Renderer r;
 
-        
-
         private int TilesX = 50;
         private int TilesY = 50;
 
@@ -28,7 +26,6 @@ namespace Snake_Projekt
             BackColor = Color.Black;
             InitializeComponent();
             Initialize();
-
             KeyDown += pf.MainForm_KeyPress;
             Resize += MainForm_Resize;
         }
@@ -57,7 +54,7 @@ namespace Snake_Projekt
         {
             pf.GameLoop();
             MainForm_Label.Refresh();
-            Player1_Score_Label.Text = pf.GetPlayerScore(1).ToString();
+            //Player1_Score_Label.Text = pf.GetPlayerScore(1).ToString();
             //Player2_Score_Label.Text = pf.GetPlayerScore(2).ToString();
             //Player3_Score_Label.Text = pf.GetPlayerScore(3).ToString();
         }
@@ -67,6 +64,11 @@ namespace Snake_Projekt
             r.updateAreaSize();
         }
 
-        
+        public void OnScoreChanged(object source, EventArgs e)
+        {
+
+        }
+
+
     }
 }

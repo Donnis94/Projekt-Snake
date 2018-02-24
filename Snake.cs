@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Snake_Projekt
 {
@@ -13,10 +14,22 @@ namespace Snake_Projekt
         private List<SnakeBody> body = new List<SnakeBody>();
         private int score;
 
+        public delegate void ScoreChangedHandler(object source, EventArgs args);
+        public event ScoreChangedHandler ScoreChanged;
+
+        public int Score
+        {
+            get => score;
+            internal set
+            {
+                score = value;
+            }
+        }
+
         private Controller controller;
         private Direction currentDirection;
         public bool isAlive { get; set; }
-        private int speed = 10;
+        public bool isSpeedy = false;
 
         public enum Direction { up, down, left, right };
 
@@ -97,7 +110,8 @@ namespace Snake_Projekt
 
         public void addScore(int extra)
         {
-            this.score += extra;
+            Score += extra;
+            OnScoreChanged();
         }
 
         public SnakeBody getHead()
@@ -111,6 +125,11 @@ namespace Snake_Projekt
             {
                 c.EnterCollidableObject(body[i]);
             }
+        }
+
+        protected virtual void OnScoreChanged()
+        {
+            ScoreChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public int GetScore()

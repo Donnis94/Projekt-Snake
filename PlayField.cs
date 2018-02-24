@@ -15,8 +15,6 @@ namespace Snake_Projekt
         Collider colliderMatrix;
         private Random Random = new Random();
 
-        
-
         private FoodFactory foodFactory = new FoodFactory();
 
         private int TilesX;
@@ -107,7 +105,7 @@ namespace Snake_Projekt
         {
             if (Food.Count < 20)
             {
-                if (Random.Next(100) == 0)
+                if (Random.Next(1) == 0)
                 {
                     Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
@@ -123,7 +121,6 @@ namespace Snake_Projekt
 
         public int GetPlayerScore(int playerScore)
         {
-            
             switch (playerScore)
             {
                 case 1:
@@ -146,6 +143,11 @@ namespace Snake_Projekt
             {
                 // Stop game somehow.
             }
+        }
+
+        public int AmountOfPlayers()
+        {
+            return Players.Count;
         }
 
         public void MainForm_KeyPress(object sender, KeyEventArgs e)
