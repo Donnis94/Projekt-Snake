@@ -23,9 +23,7 @@ namespace Snake_Projekt
 
         public MainForm()
         {
-            this.WindowState = FormWindowState.Maximized;
-            Width = 2000;
-            Height = 2000;
+            //this.WindowState = FormWindowState.Maximized;
             BackColor = Color.Black;
             InitializeComponent();
             Initialize();

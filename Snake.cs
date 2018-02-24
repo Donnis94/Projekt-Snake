@@ -14,25 +14,18 @@ namespace Snake_Projekt
         private int score;
         
         private Controller controller;
-        public bool isAlive { get; set; }
-        Point point;
-        private int size;
-        public enum Direction { up, down, left, right };
         private Direction currentDirection;
+        public bool isAlive { get; set; }
         private int speed = 10;
-        
-        Brush brush
-        {
-            set;
-            get;
-        }
+
+        public enum Direction { up, down, left, right };
+
+        Brush brush { get; set; }
 
         public Snake(int x, int y, int size, Controller controller, Brush color) : this(new Point(x, y), size, controller, color) { }
         public Snake(Point point, int size, Controller controller, Brush color)
         {
             this.currentDirection = Direction.down;
-            this.point = point;
-            this.size = size;
             this.controller = controller;
             this.brush = color;
             this.score = 0;
@@ -54,10 +47,10 @@ namespace Snake_Projekt
                 return;
             }
 
-                for (int i = body.Count - 1; i > 0; i--)
-                    body[i].position = body[i - 1].position;
+            for (int i = body.Count - 1; i > 0; i--)
+                body[i].MoveTo(body[i - 1]);
 
-                MoveSnakeHead();
+            MoveSnakeHead();
         }
 
         private void MoveSnakeHead()
@@ -66,21 +59,8 @@ namespace Snake_Projekt
             {
                 controller.direction = currentDirection;
             }
-            switch (controller.direction)
-            {
-                case Snake.Direction.left:
-                    body[0].position = new Point(body[0].position.X - 1, body[0].position.Y);
-                    break;
-                case Snake.Direction.right:
-                    body[0].position = new Point(body[0].position.X + 1, body[0].position.Y);
-                    break;
-                case Snake.Direction.up:
-                    body[0].position = new Point(body[0].position.X, body[0].position.Y - 1);
-                    break;
-                case Snake.Direction.down:
-                    body[0].position = new Point(body[0].position.X, body[0].position.Y + 1);
-                    break;
-            }
+
+            body[0].MoveInDirection(controller.direction);
 
             currentDirection = controller.direction;
         }
@@ -112,7 +92,7 @@ namespace Snake_Projekt
         public void expand(int count)
         {
             for (int i = 0; i < count; i++)
-                body.Add(new SnakeBody(body[body.Count - 1].position, this));//need to set the actual position of the last bodypart
+                body.Add(new SnakeBody(body[body.Count - 1].position, this));
         }
 
         public void addScore(int extra)
@@ -133,38 +113,16 @@ namespace Snake_Projekt
             }
         }
 
-        public void CollisionEffect()
-        {
-            /*
-            if ()//collides with standard food 
-            {
-                expand();
-                this.score = score + 1;
-            }
-            else if ()//collides with special food
-            {
-                expand();
-                expand();
-                this.score = score + 2;
-            }
-            else if ()//collide with speedy food
-            {
-                this.speed = speed * 2;
-                //set timer for speed at 10 seconds
-            }
-            */
-        }
-
         public void Draw(Renderer renderer)
         {
-            if(isAlive)
+            if (!isAlive)
             {
+                return;
+            }
             for (int i = 0; i < body.Count; i++)
             {
                 body[i].Draw(renderer, brush);
             }
-            }
         }
-
     }
 }

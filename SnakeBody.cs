@@ -36,5 +36,29 @@ namespace Snake_Projekt
             }
             sb.mySnake.isAlive = false;
         }
+
+        public void MoveTo(SnakeBody sb)
+        {
+            this.position = sb.position;
+        }
+
+        public void MoveInDirection(Snake.Direction direction)
+        {
+            switch (direction)
+            {
+                case Snake.Direction.left:
+                    position = new Point(position.X - 1, position.Y);
+                    break;
+                case Snake.Direction.right:
+                    position = new Point(position.X + 1, position.Y);
+                    break;
+                case Snake.Direction.up:
+                    position = new Point(position.X, position.Y - 1);
+                    break;
+                case Snake.Direction.down:
+                    position = new Point(position.X, position.Y + 1);
+                    break;
+            }
+        }
     }
 }
