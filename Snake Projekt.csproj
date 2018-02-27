@@ -64,6 +64,7 @@
     <Compile Include="Renderer.cs" />
     <Compile Include="Snake.cs" />
     <Compile Include="SnakeBody.cs" />
+    <Compile Include="SnakeFactory.cs" />
     <Compile Include="Trigger.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

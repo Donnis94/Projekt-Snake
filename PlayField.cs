@@ -111,6 +111,32 @@ namespace Snake_Projekt
             }
         }
 
+        private void SpawnNewPlayer(int amountOfPlayers)
+        {
+            switch (amountOfPlayers)
+            {
+                case 1:
+                {
+                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller1(), Brushes.DarkCyan,SnakeFactory.Players.Player1));
+                    return;
+                }
+                case 2:
+                {
+                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller1(), Brushes.DarkCyan,SnakeFactory.Players.Player1));
+                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller2(), Brushes.DarkCyan,SnakeFactory.Players.Player2));
+                    return;
+                }
+                case 3:
+                {
+                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller1(), Brushes.DarkCyan, SnakeFactory.Players.Player1));
+                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller2(), Brushes.DarkCyan, SnakeFactory.Players.Player2));
+                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller3(), Brushes.DarkCyan, SnakeFactory.Players.Player3));
+                    return;
+                }
+
+            }
+        }
+
         public int GetPlayerScore(int playerScore)
         {
             switch (playerScore)
