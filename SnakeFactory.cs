@@ -18,15 +18,15 @@ namespace Snake_Projekt
             {
                 case Players.Player1:
                 {
-                    return new Snake(x, y, size, controller, color);
+                    return new Snake(x, y, size, Config.Player.Player1);
                 }
                 case Players.Player2:
                 {
-                    return new Snake(x, y, size, controller, color);
+                    return new Snake(x, y, size, Config.Player.Player2);
                 }
                 case Players.Player3:
                 {
-                    return new Snake(x, y, size, controller, color);
+                    return new Snake(x, y, size, Config.Player.Player3);
                 }
                 default:
                 {

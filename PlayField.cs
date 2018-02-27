@@ -22,7 +22,7 @@ namespace Snake_Projekt
 
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
-            Players.Add(new Snake(1, 1, 5, new Controller1(), Brushes.DarkCyan));
+            Players.Add(new Snake(1, 1, 5, Config.Player.Player1));
 
             TilesX = tilesX;
             TilesY = tilesY;
@@ -111,6 +111,7 @@ namespace Snake_Projekt
             }
         }
 
+        /*
         private void SpawnNewPlayer(int amountOfPlayers)
         {
             switch (amountOfPlayers)
@@ -136,6 +137,7 @@ namespace Snake_Projekt
 
             }
         }
+        */
 
         public int GetPlayerScore(int playerScore)
         {
