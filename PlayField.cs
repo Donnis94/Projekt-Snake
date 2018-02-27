@@ -22,10 +22,7 @@ namespace Snake_Projekt
 
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
-            //Players.Add(new Snake(1, 1, 5, Config.Player.Player1));
-            SpawnNewPlayer(3, tilesX, tilesY);
-            this.tilesX = tilesX;
-            this.tilesY = tilesY;
+            Players.Add(new Snake(1, 1, 5, Config.Player.Player1));
 
             colliderMatrix = new Collider(tilesX, tilesY);
         }
