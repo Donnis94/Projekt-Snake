@@ -17,16 +17,15 @@ namespace Snake_Projekt
 
         private FoodFactory foodFactory = new FoodFactory();
 
-        private int TilesX;
-        private int TilesY;
+        private int tilesX;
+        private int tilesY;
 
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
-            Players.Add(new Snake(1, 1, 5, Config.Player.Player1));
-            Players.Add(new Snake(10, 1, 5, Config.Player.Player2));
-
-            TilesX = tilesX;
-            TilesY = tilesY;
+            //Players.Add(new Snake(1, 1, 5, Config.Player.Player1));
+            SpawnNewPlayer(3, tilesX, tilesY);
+            this.tilesX = tilesX;
+            this.tilesY = tilesY;
 
             colliderMatrix = new Collider(tilesX, tilesY);
         }
@@ -82,7 +81,7 @@ namespace Snake_Projekt
 
         public void Draw(Renderer renderer)
         {
-            renderer.DrawAt(0, 0, TilesX, TilesY, Brushes.Orange);
+            renderer.DrawAt(0, 0, tilesX, tilesY, Brushes.Orange);
 
             foreach (var player in Players)
             {
@@ -100,45 +99,71 @@ namespace Snake_Projekt
             {
                 if (Random.Next(1) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.ValuableFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.ValuableFood, colliderMatrix));
                 }
                 else
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
                 
             }
         }
 
-        /*
-        private void SpawnNewPlayer(int amountOfPlayers)
+        
+        private void SpawnNewPlayer(int amountOfPlayers, int tilesX, int tilesY)
         {
             switch (amountOfPlayers)
             {
                 case 1:
                 {
-                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller1(), Brushes.DarkCyan,SnakeFactory.Players.Player1));
+                    var startLocation = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation.X, startLocation.Y, 5, Config.Player.Player1));
                     return;
                 }
                 case 2:
                 {
-                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller1(), Brushes.DarkCyan,SnakeFactory.Players.Player1));
-                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller2(), Brushes.DarkCyan,SnakeFactory.Players.Player2));
+                    var startLocation1 = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
+                    var startLocation2 = GetStartLocation(tilesX, tilesY, Config.Player.Player2);
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation1.X, startLocation1.Y, 5, Config.Player.Player1));
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation2.X, startLocation2.Y, 5, Config.Player.Player2));
                     return;
                 }
                 case 3:
                 {
-                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller1(), Brushes.DarkCyan, SnakeFactory.Players.Player1));
-                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller2(), Brushes.DarkCyan, SnakeFactory.Players.Player2));
-                    Players.Add(SnakeFactory.ProduceSnake(1, 1, 5, new Controller3(), Brushes.DarkCyan, SnakeFactory.Players.Player3));
+                    var startLocation1 = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
+                    var startLocation2 = GetStartLocation(tilesX, tilesY, Config.Player.Player2);
+                    var startLocation3 = GetStartLocation(tilesX, tilesY, Config.Player.Player3);
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation1.X, startLocation1.Y, 5, Config.Player.Player1));
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation2.X, startLocation2.Y, 5, Config.Player.Player2));
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation3.X, startLocation3.Y, 5, Config.Player.Player3));
                     return;
                 }
 
             }
         }
-        */
+
+        private Point GetStartLocation(int tilesX, int tilesY, Config.Player player)
+        {
+            switch (player)
+            {
+                case Config.Player.Player1:
+                    var startPoint1 = new Point(tilesX - 49, tilesY - 48);
+                    return startPoint1;
+                case Config.Player.Player2:
+                    var startPoint2 = new Point(tilesX - 2, tilesY - 48);
+                    return startPoint2;
+                case Config.Player.Player3:
+                    var startPoint3 = new Point(tilesX / 2, tilesY - 2);
+                    return startPoint3;
+                default:
+                {
+                    throw new MissingFieldException();
+                }
+            }
+        }
+
 
         public int GetPlayerScore(int playerScore)
         {

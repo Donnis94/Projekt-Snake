@@ -18,7 +18,7 @@ namespace Snake_Projekt
                 case Player.Player1:
                     return Brushes.Red;
                 case Player.Player2:
-                    return Brushes.Green;
+                    return Brushes.BlanchedAlmond;
                 case Player.Player3:
                     return Brushes.Blue;
             }
@@ -40,5 +40,23 @@ namespace Snake_Projekt
 
             return new Controller1();
         }
+
+        public static Snake.Direction GetPlayerDirection(Player player)
+        {
+            switch (player)
+            {
+                case Player.Player1:
+                    return Snake.Direction.down;
+                case Player.Player2:
+                    return Snake.Direction.down;
+                case Player.Player3:
+                    return Snake.Direction.up;
+                default:
+                {
+                    throw new MissingFieldException();
+                }
+            }
+        }
+        
     }
 }
