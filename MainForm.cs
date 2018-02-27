@@ -63,7 +63,19 @@ namespace Snake_Projekt
 
         private void OnScoreUpdated(Snake source)
         {
-            Player1_Score_Label.Text = source.Score.ToString();
+            switch (source.player)
+            {
+                case Config.Player.Player1:
+                    //Player1_Score_Label.ForeColor = Config.GetPlayerColor(Config.Player.Player1);
+                    Player1_Score_Label.Text = source.Score.ToString();
+                    break;
+                case Config.Player.Player2:
+                    Player2_Score_Label.Text = source.Score.ToString();
+                    break;
+                case Config.Player.Player3:
+                    Player3_Score_Label.Text = source.Score.ToString();
+                    break;
+            }
         }
 
         private void MainForm_Resize(object sender, EventArgs e)
