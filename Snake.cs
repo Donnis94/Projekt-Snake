@@ -85,13 +85,13 @@ namespace Snake_Projekt
         public void StartSpeedUp()
         {
             speedTimeTrigger.Start();
-            moveTrigger.Threshold = 1;
+            moveTrigger.Threshold = 0;
         }
 
         public void StopSpeedUp()
         {
             speedTimeTrigger.Stop();
-            moveTrigger.Threshold = 0;
+            moveTrigger.Threshold = 1;
         }
 
         private void MoveSnakeHead()
