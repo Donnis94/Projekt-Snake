@@ -19,7 +19,7 @@ namespace Snake_Projekt
 
         public int Score
         {
-            get => score;
+            get { return score; }
             internal set
             {
                 score = value;
@@ -36,9 +36,9 @@ namespace Snake_Projekt
         Brush brush { get; set; }
 
         public Snake(int x, int y, int size, Controller controller, Brush color) : this(new Point(x, y), size, controller, color) { }
-        public Snake(Point point, int size, Controller controller, Brush color)
+        public Snake(Point point, int size, Controller controller, Brush color, Direction startDirection = Direction.down)
         {
-            this.currentDirection = Direction.down;
+            this.currentDirection = startDirection;
             this.controller = controller;
             this.brush = color;
             this.score = 0;
