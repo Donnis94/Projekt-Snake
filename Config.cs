@@ -33,7 +33,7 @@ namespace Snake_Projekt
                 case Player.Player1:
                     return new Controller1();
                 case Player.Player2:
-                    return new Controller3();
+                    return new Controller2();
                 case Player.Player3:
                     return new Controller3();
             }
