@@ -73,9 +73,9 @@ namespace Snake_Projekt
                 snake.addBodyToCollider(colliderMatrix);
             }
 
-            foreach (var snakeHead in Players)
+            foreach (var snake in Players)
             {
-                colliderMatrix.SnakeHeadCollisions(snakeHead.getHead());
+                snake.addHeadToCollider(colliderMatrix);
             }
         }
 

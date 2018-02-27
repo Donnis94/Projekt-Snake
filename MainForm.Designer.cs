@@ -64,6 +64,7 @@
             // Player3_Score_Label
             // 
             this.Player3_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Player3_Score_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.Player3_Score_Label.Location = new System.Drawing.Point(391, 50);
             this.Player3_Score_Label.Name = "Player3_Score_Label";
             this.Player3_Score_Label.Size = new System.Drawing.Size(190, 50);
@@ -74,6 +75,7 @@
             // Player2_Score_Label
             // 
             this.Player2_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Player2_Score_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.Player2_Score_Label.Location = new System.Drawing.Point(197, 50);
             this.Player2_Score_Label.Name = "Player2_Score_Label";
             this.Player2_Score_Label.Size = new System.Drawing.Size(188, 50);
@@ -84,6 +86,7 @@
             // Player3_Name_Label
             // 
             this.Player3_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Player3_Name_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.Player3_Name_Label.Location = new System.Drawing.Point(391, 0);
             this.Player3_Name_Label.Name = "Player3_Name_Label";
             this.Player3_Name_Label.Size = new System.Drawing.Size(190, 50);
@@ -94,6 +97,7 @@
             // Player2_Name_Label
             // 
             this.Player2_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Player2_Name_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.Player2_Name_Label.Location = new System.Drawing.Point(197, 0);
             this.Player2_Name_Label.Name = "Player2_Name_Label";
             this.Player2_Name_Label.Size = new System.Drawing.Size(188, 50);
@@ -104,6 +108,7 @@
             // Player1_Name_Label
             // 
             this.Player1_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Player1_Name_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.Player1_Name_Label.Location = new System.Drawing.Point(3, 0);
             this.Player1_Name_Label.Name = "Player1_Name_Label";
             this.Player1_Name_Label.Size = new System.Drawing.Size(188, 50);
@@ -114,6 +119,7 @@
             // Player1_Score_Label
             // 
             this.Player1_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Player1_Score_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.Player1_Score_Label.Location = new System.Drawing.Point(3, 50);
             this.Player1_Score_Label.Name = "Player1_Score_Label";
             this.Player1_Score_Label.Size = new System.Drawing.Size(188, 50);

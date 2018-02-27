@@ -28,6 +28,7 @@ namespace Snake_Projekt
 
         private Controller controller;
         private Direction currentDirection;
+        public Config.Player player { get; private set; }
         public bool isAlive { get; set; }
         public bool isSpeedy = false;
 
@@ -41,6 +42,7 @@ namespace Snake_Projekt
             this.currentDirection = startDirection;
             this.controller = Config.GetPlayerControl(player);
             this.brush = Config.GetPlayerColor(player);
+            this.player = player;
             this.score = 0;
             this.isAlive = true;
             body.Add(new SnakeBody(point, this));
@@ -113,13 +115,21 @@ namespace Snake_Projekt
             ScoreChanged?.Invoke(this);
         }
 
-        public SnakeBody getHead()
+        public void addHeadToCollider(Collider c)
         {
-            return this.body[0];
+            if (!isAlive)
+            {
+                return;
+            }
+            c.SnakeHeadCollisions(this.body[0]);
         }
 
         public void addBodyToCollider(Collider c)
         {
+            if (!isAlive)
+            {
+                return;
+            }
             for (int i = 1; i < body.Count; i++)
             {
                 c.EnterCollidableObject(body[i]);
@@ -135,7 +145,7 @@ namespace Snake_Projekt
         {
             if (!isAlive)
             {
-                return;
+                //return;
             }
             for (int i = 0; i < body.Count; i++)
             {
