@@ -42,6 +42,7 @@ namespace Snake_Projekt
             {
                 Count = Threshold;
                 Triggered?.Invoke();
+                return;
             }
 
             Count--;

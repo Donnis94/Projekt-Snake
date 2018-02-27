@@ -15,6 +15,8 @@ namespace Snake_Projekt
         PlayField pf;
         Timer timer;
         Renderer r;
+        private Trigger trigger;
+        public static int FPS = 40;
 
         private int TilesX = 50;
         private int TilesY = 50;
@@ -40,7 +42,7 @@ namespace Snake_Projekt
             r = new Renderer(MainForm_Label, TilesX, TilesY);
             timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000 / 20;
+            timer.Interval = 1000 / FPS;
             timer.Start();
 
         }
