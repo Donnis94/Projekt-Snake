@@ -14,8 +14,8 @@ namespace Snake_Projekt
         private List<SnakeBody> body = new List<SnakeBody>();
         private int score;
 
-        public delegate void ScoreChangedHandler(object source, EventArgs args);
-        public event ScoreChangedHandler ScoreChanged;
+        public delegate void ScoreChangedHandler(Snake source);
+        public static event ScoreChangedHandler ScoreChanged;
 
         public int Score
         {
@@ -33,7 +33,7 @@ namespace Snake_Projekt
 
         public enum Direction { up, down, left, right };
 
-        Brush brush { get; set; }
+        public Brush brush { get; private set; }
 
         public Snake(int x, int y, int size, Controller controller, Brush color) : this(new Point(x, y), size, controller, color) { }
         public Snake(Point point, int size, Controller controller, Brush color, Direction startDirection = Direction.down)
@@ -45,7 +45,6 @@ namespace Snake_Projekt
             this.isAlive = true;
             body.Add(new SnakeBody(point, this));
             expand(size);
-
         }
 
         public void ControllerInput(Keys key)
@@ -111,7 +110,7 @@ namespace Snake_Projekt
         public void addScore(int extra)
         {
             Score += extra;
-            OnScoreChanged();
+            ScoreChanged?.Invoke(this);
         }
 
         public SnakeBody getHead()
@@ -125,11 +124,6 @@ namespace Snake_Projekt
             {
                 c.EnterCollidableObject(body[i]);
             }
-        }
-
-        protected virtual void OnScoreChanged()
-        {
-            ScoreChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public int GetScore()

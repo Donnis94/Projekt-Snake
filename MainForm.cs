@@ -22,12 +22,14 @@ namespace Snake_Projekt
         public MainForm()
         {
 
-            //this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;
             BackColor = Color.Black;
             InitializeComponent();
             Initialize();
             KeyDown += pf.MainForm_KeyPress;
             Resize += MainForm_Resize;
+
+            Snake.ScoreChanged += OnScoreUpdated;
         }
 
         private void Initialize()
@@ -59,16 +61,14 @@ namespace Snake_Projekt
             //Player3_Score_Label.Text = pf.GetPlayerScore(3).ToString();
         }
 
+        private void OnScoreUpdated(Snake source)
+        {
+            Player1_Score_Label.Text = source.Score.ToString();
+        }
+
         private void MainForm_Resize(object sender, EventArgs e)
         {
             r.updateAreaSize();
         }
-
-        public void OnScoreChanged(object source, EventArgs e)
-        {
-
-        }
-
-
     }
 }
