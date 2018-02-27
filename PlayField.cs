@@ -39,7 +39,7 @@ namespace Snake_Projekt
             
             foreach (var player in Players)
             {
-                player.Move();
+                player.Update();
             }
             CheckCollisions();
             SpawnNewFood();
