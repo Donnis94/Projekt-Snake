@@ -82,13 +82,13 @@ namespace Snake_Projekt
             speedTimeTrigger.Tick();
         }
 
-        private void StartSpeedUp()
+        public void StartSpeedUp()
         {
             speedTimeTrigger.Start();
             moveTrigger.Threshold = 1;
         }
 
-        private void StopSpeedUp()
+        public void StopSpeedUp()
         {
             speedTimeTrigger.Stop();
             moveTrigger.Threshold = 0;

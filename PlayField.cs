@@ -22,7 +22,7 @@ namespace Snake_Projekt
 
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
-            SpawnNewPlayer(3, tilesX, tilesY);
+            SpawnNewPlayer(1, tilesX, tilesY);
             this.tilesX = tilesX;
             this.tilesY = tilesY;
 
@@ -102,10 +102,10 @@ namespace Snake_Projekt
                 }
                 else if (Random.Next(50) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.ValuableFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 
             }
         }
@@ -122,8 +122,7 @@ namespace Snake_Projekt
                 }
             }
             var playerToMakeSpeedy = random.Next(this.Players.Count);
-            this.Players.ElementAt(playerToMakeSpeedy).isSpeedy = true;
-            
+            Players.ElementAt(playerToMakeSpeedy).StartSpeedUp();
         }
 
         
