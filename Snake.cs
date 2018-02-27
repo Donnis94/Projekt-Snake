@@ -73,7 +73,6 @@ namespace Snake_Projekt
 
         public void Update()
         {
-            //Move();
             trigger.Tick();
         }
 

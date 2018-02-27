@@ -89,7 +89,8 @@ namespace Snake_Projekt
         public override void CollisionEffect(SnakeBody sb)
         {
             base.CollisionEffect(sb);
-            sb.mySnake.isSpeedy = true;
+            playField.GiveRandomSnakeSpeedUpEffect();
+            //sb.mySnake.isSpeedy = true;
             AmountOfSpeedyFood--;
         }
     }

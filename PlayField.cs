@@ -110,6 +110,13 @@ namespace Snake_Projekt
             }
         }
 
+        public void GiveRandomSnakeSpeedUpEffect()
+        {
+            var random = new Random();
+            var playerMakeSpeedy = random.Next(this.Players.Count);
+            this.Players.ElementAt(playerMakeSpeedy).isSpeedy = true;
+        }
+
         
         private void SpawnNewPlayer(int amountOfPlayers, int tilesX, int tilesY)
         {
