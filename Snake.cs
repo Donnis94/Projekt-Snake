@@ -35,12 +35,12 @@ namespace Snake_Projekt
 
         public Brush brush { get; private set; }
 
-        public Snake(int x, int y, int size, Controller controller, Brush color) : this(new Point(x, y), size, controller, color) { }
-        public Snake(Point point, int size, Controller controller, Brush color, Direction startDirection = Direction.down)
+        public Snake(int x, int y, int size, Config.Player player) : this(new Point(x, y), size, player) { }
+        public Snake(Point point, int size, Config.Player player, Direction startDirection = Direction.down)
         {
             this.currentDirection = startDirection;
-            this.controller = controller;
-            this.brush = color;
+            this.controller = Config.GetPlayerControl(player);
+            this.brush = Config.GetPlayerColor(player);
             this.score = 0;
             this.isAlive = true;
             body.Add(new SnakeBody(point, this));
