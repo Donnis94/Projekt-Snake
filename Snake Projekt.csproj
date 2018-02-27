@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collider.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="CoordinateConverter.cs" />
     <Compile Include="Food.cs" />
