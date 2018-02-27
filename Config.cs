@@ -41,18 +41,22 @@ namespace Snake_Projekt
             return new Controller1();
         }
 
-        /*public static Snake.Direction GetPlayerDirection(Player player)
+        public static Snake.Direction GetPlayerDirection(Player player)
         {
             switch (player)
             {
                 case Player.Player1:
-                    return Snake.Direction.left;
+                    return Snake.Direction.down;
                 case Player.Player2:
-                    return new Controller3();
+                    return Snake.Direction.down;
                 case Player.Player3:
-                    return new Controller3();
+                    return Snake.Direction.up;
+                default:
+                {
+                    throw new MissingFieldException();
+                }
             }
         }
-        */
+        
     }
 }

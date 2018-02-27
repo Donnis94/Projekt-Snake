@@ -149,13 +149,13 @@ namespace Snake_Projekt
             switch (player)
             {
                 case Config.Player.Player1:
-                    var startPoint1 = new Point(tilesX / 10, tilesY / 10);
+                    var startPoint1 = new Point(tilesX - 49, tilesY - 48);
                     return startPoint1;
                 case Config.Player.Player2:
-                    var startPoint2 = new Point(tilesX - 10, tilesY / 10);
+                    var startPoint2 = new Point(tilesX - 2, tilesY - 48);
                     return startPoint2;
                 case Config.Player.Player3:
-                    var startPoint3 = new Point(tilesX / 2, tilesY / 10);
+                    var startPoint3 = new Point(tilesX / 2, tilesY - 2);
                     return startPoint3;
                 default:
                 {
