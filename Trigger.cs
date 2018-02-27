@@ -9,6 +9,7 @@ namespace Snake_Projekt
     class Trigger
     {
         int threshold;
+        bool active;
 
         public int Threshold
         {
@@ -34,18 +35,32 @@ namespace Snake_Projekt
         public Trigger(int threshold)
         {
             Threshold = threshold;
+            Stop();
         }
 
         public void Tick()
         {
-            if (Count == 0)
+            if (Count == 0 && active)
             {
                 Count = Threshold;
                 Triggered?.Invoke();
                 return;
             }
+            else if (active)
+            {
+                Count--;
+            }
+        }
 
-            Count--;
+        public void Start()
+        {
+            active = true;
+        }
+
+        public void Stop()
+        {
+            active = false;
+            Count = Threshold;
         }
     }
 }
