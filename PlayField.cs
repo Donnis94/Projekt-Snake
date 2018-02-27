@@ -99,7 +99,7 @@ namespace Snake_Projekt
             {
                 if (Random.Next(1) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
