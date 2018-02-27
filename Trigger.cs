@@ -35,7 +35,7 @@ namespace Snake_Projekt
         public Trigger(int threshold)
         {
             Threshold = threshold;
-            active = true;
+            Stop();
         }
 
         public void Tick()
@@ -60,6 +60,7 @@ namespace Snake_Projekt
         public void Stop()
         {
             active = false;
+            Count = Threshold;
         }
     }
 }

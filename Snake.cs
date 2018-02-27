@@ -29,6 +29,7 @@ namespace Snake_Projekt
         private Controller controller;
         private Direction currentDirection;
         private Trigger moveTrigger;
+        private Trigger speedTimeTrigger;
         public Config.Player player { get; private set; }
         public bool isAlive { get; set; }
         public bool isSpeedy = false;
@@ -48,6 +49,9 @@ namespace Snake_Projekt
             this.isAlive = true;
             this.moveTrigger = new Trigger(1);
             this.moveTrigger.Triggered += Move;
+            this.moveTrigger.Start();
+            this.speedTimeTrigger = new Trigger((1000 / MainForm.FPS) * 10);
+            this.speedTimeTrigger.Triggered += StopSpeedUp;
             body.Add(new SnakeBody(point, this));
             expand(size);
             Move();
@@ -75,9 +79,14 @@ namespace Snake_Projekt
         {
             //Move();
             moveTrigger.Tick();
+            speedTimeTrigger.Tick();
         }
 
-
+        private void StopSpeedUp()
+        {
+            speedTimeTrigger.Stop();
+            moveTrigger.Threshold = 0;
+        }
 
         private void MoveSnakeHead()
         {
