@@ -145,7 +145,7 @@ namespace Snake_Projekt
         {
             if (!isAlive)
             {
-                //return;
+                return;
             }
             for (int i = 0; i < body.Count; i++)
             {

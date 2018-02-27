@@ -23,6 +23,7 @@ namespace Snake_Projekt
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
             Players.Add(new Snake(1, 1, 5, Config.Player.Player1));
+            Players.Add(new Snake(10, 1, 5, Config.Player.Player2));
 
             TilesX = tilesX;
             TilesY = tilesY;

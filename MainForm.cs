@@ -66,7 +66,6 @@ namespace Snake_Projekt
             switch (source.player)
             {
                 case Config.Player.Player1:
-                    //Player1_Score_Label.ForeColor = Config.GetPlayerColor(Config.Player.Player1);
                     Player1_Score_Label.Text = source.Score.ToString();
                     break;
                 case Config.Player.Player2:
