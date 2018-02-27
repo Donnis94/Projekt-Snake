@@ -98,7 +98,7 @@ namespace Snake_Projekt
             {
                 if (Random.Next(1) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
@@ -112,9 +112,18 @@ namespace Snake_Projekt
 
         public void GiveRandomSnakeSpeedUpEffect()
         {
+            
             var random = new Random();
-            var playerMakeSpeedy = random.Next(this.Players.Count);
-            this.Players.ElementAt(playerMakeSpeedy).isSpeedy = true;
+            foreach (var snake in Players)
+            {
+                if (snake.isAlive)
+                {
+                    
+                }
+            }
+            var playerToMakeSpeedy = random.Next(this.Players.Count);
+            this.Players.ElementAt(playerToMakeSpeedy).isSpeedy = true;
+            
         }
 
         
@@ -155,13 +164,13 @@ namespace Snake_Projekt
             switch (player)
             {
                 case Config.Player.Player1:
-                    var startPoint1 = new Point(tilesX - 49, tilesY - 48);
+                    var startPoint1 = new Point(1, 2);
                     return startPoint1;
                 case Config.Player.Player2:
-                    var startPoint2 = new Point(tilesX - 2, tilesY - 48);
+                    var startPoint2 = new Point(48, 2);
                     return startPoint2;
                 case Config.Player.Player3:
-                    var startPoint3 = new Point(tilesX / 2, tilesY - 2);
+                    var startPoint3 = new Point(tilesX / 2, 48);
                     return startPoint3;
                 default:
                 {
