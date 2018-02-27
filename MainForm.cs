@@ -15,6 +15,8 @@ namespace Snake_Projekt
         PlayField pf;
         Timer timer;
         Renderer r;
+        private Trigger trigger;
+        public static int FPS = 40;
 
         private int TilesX = 50;
         private int TilesY = 50;
@@ -22,12 +24,14 @@ namespace Snake_Projekt
         public MainForm()
         {
 
-            //this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;
             BackColor = Color.Black;
             InitializeComponent();
             Initialize();
             KeyDown += pf.MainForm_KeyPress;
             Resize += MainForm_Resize;
+
+            Snake.ScoreChanged += OnScoreUpdated;
         }
 
         private void Initialize()
@@ -38,7 +42,7 @@ namespace Snake_Projekt
             r = new Renderer(MainForm_Label, TilesX, TilesY);
             timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000 / 20;
+            timer.Interval = 1000 / FPS;
             timer.Start();
 
         }
@@ -59,16 +63,25 @@ namespace Snake_Projekt
             //Player3_Score_Label.Text = pf.GetPlayerScore(3).ToString();
         }
 
+        private void OnScoreUpdated(Snake source)
+        {
+            switch (source.player)
+            {
+                case Config.Player.Player1:
+                    Player1_Score_Label.Text = source.Score.ToString();
+                    break;
+                case Config.Player.Player2:
+                    Player2_Score_Label.Text = source.Score.ToString();
+                    break;
+                case Config.Player.Player3:
+                    Player3_Score_Label.Text = source.Score.ToString();
+                    break;
+            }
+        }
+
         private void MainForm_Resize(object sender, EventArgs e)
         {
             r.updateAreaSize();
         }
-
-        public void OnScoreChanged(object source, EventArgs e)
-        {
-
-        }
-
-
     }
 }

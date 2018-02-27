@@ -14,12 +14,12 @@ namespace Snake_Projekt
         private List<SnakeBody> body = new List<SnakeBody>();
         private int score;
 
-        public delegate void ScoreChangedHandler(object source, EventArgs args);
-        public event ScoreChangedHandler ScoreChanged;
+        public delegate void ScoreChangedHandler(Snake source);
+        public static event ScoreChangedHandler ScoreChanged;
 
         public int Score
         {
-            get => score;
+            get { return score; }
             internal set
             {
                 score = value;
@@ -28,24 +28,33 @@ namespace Snake_Projekt
 
         private Controller controller;
         private Direction currentDirection;
+        private Trigger moveTrigger;
+        private Trigger speedTimeTrigger;
+        public Config.Player player { get; private set; }
         public bool isAlive { get; set; }
         public bool isSpeedy = false;
 
         public enum Direction { up, down, left, right };
 
-        Brush brush { get; set; }
+        public Brush brush { get; private set; }
 
-        public Snake(int x, int y, int size, Controller controller, Brush color) : this(new Point(x, y), size, controller, color) { }
-        public Snake(Point point, int size, Controller controller, Brush color)
+        public Snake(int x, int y, int size, Config.Player player) : this(new Point(x, y), size, player) { }
+        public Snake(Point point, int size, Config.Player player)
         {
-            this.currentDirection = Direction.down;
-            this.controller = controller;
-            this.brush = color;
+            this.currentDirection = Config.GetPlayerDirection(player);
+            this.controller = Config.GetPlayerControl(player);
+            this.brush = Config.GetPlayerColor(player);
+            this.player = player;
             this.score = 0;
             this.isAlive = true;
+            this.moveTrigger = new Trigger(1);
+            this.moveTrigger.Triggered += Move;
+            this.moveTrigger.Start();
+            this.speedTimeTrigger = new Trigger((1000 / MainForm.FPS) * 10);
+            this.speedTimeTrigger.Triggered += StopSpeedUp;
             body.Add(new SnakeBody(point, this));
             expand(size);
-
+            Move();
         }
 
         public void ControllerInput(Keys key)
@@ -64,6 +73,25 @@ namespace Snake_Projekt
                 body[i].MoveTo(body[i - 1]);
 
             MoveSnakeHead();
+        }
+
+        public void Update()
+        {
+            //Move();
+            moveTrigger.Tick();
+            speedTimeTrigger.Tick();
+        }
+
+        public void StartSpeedUp()
+        {
+            speedTimeTrigger.Start();
+            moveTrigger.Threshold = 0;
+        }
+
+        public void StopSpeedUp()
+        {
+            speedTimeTrigger.Stop();
+            moveTrigger.Threshold = 1;
         }
 
         private void MoveSnakeHead()
@@ -111,25 +139,28 @@ namespace Snake_Projekt
         public void addScore(int extra)
         {
             Score += extra;
-            OnScoreChanged();
+            ScoreChanged?.Invoke(this);
         }
 
-        public SnakeBody getHead()
+        public void addHeadToCollider(Collider c)
         {
-            return this.body[0];
+            if (!isAlive)
+            {
+                return;
+            }
+            c.SnakeHeadCollisions(this.body[0]);
         }
 
         public void addBodyToCollider(Collider c)
         {
+            if (!isAlive)
+            {
+                return;
+            }
             for (int i = 1; i < body.Count; i++)
             {
                 c.EnterCollidableObject(body[i]);
             }
-        }
-
-        protected virtual void OnScoreChanged()
-        {
-            ScoreChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public int GetScore()

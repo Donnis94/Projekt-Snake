@@ -25,14 +25,6 @@ namespace Snake_Projekt
         {
             coordConv.setDimentions(drawControll.Size.Width, drawControll.Size.Height);
             drawArea = drawControll.CreateGraphics();
-
-            if (drawControll.Size.Width > 1200)
-            {
-                float iX = coordConv.toViewX(9);
-                float iY = coordConv.toViewY(9);
-                float scale = coordConv.scale;
-                Console.Write("");
-            }
         }
 
         public void DrawAt(int x, int y, Brush b)

@@ -17,23 +17,14 @@ namespace Snake_Projekt
 
         private FoodFactory foodFactory = new FoodFactory();
 
-        private int TilesX;
-        private int TilesY;
+        private int tilesX;
+        private int tilesY;
 
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
-            Players.Add(new Snake(1, 1, 5, new Controller1(), Brushes.DarkCyan));
-            //Food.Add(new SpeedyFood(new Point(3, 4), this));
-            //Food.Add(new SpeedyFood(new Point(5, 6), this));
-            //Food.Add(new StandardFood(new Point(7, 7), this));
-            //Food.Add(new ValuableFood(new Point(3, 4), this));
-            //Food.Add(new ValuableFood(new Point(5, 6), this));
-            //Food.Add(new ValuableFood(new Point(7, 7), this));
-            //Food.Add(new ValuableFood(new Point(1, 2), this));
-            //Food.Add(new ValuableFood(new Point(5, 7), this));
-
-            TilesX = tilesX;
-            TilesY = tilesY;
+            SpawnNewPlayer(1, tilesX, tilesY);
+            this.tilesX = tilesX;
+            this.tilesY = tilesY;
 
             colliderMatrix = new Collider(tilesX, tilesY);
         }
@@ -48,7 +39,7 @@ namespace Snake_Projekt
             
             foreach (var player in Players)
             {
-                player.Move();
+                player.Update();
             }
             CheckCollisions();
             SpawnNewFood();
@@ -81,15 +72,15 @@ namespace Snake_Projekt
                 snake.addBodyToCollider(colliderMatrix);
             }
 
-            foreach (var snakeHead in Players)
+            foreach (var snake in Players)
             {
-                colliderMatrix.SnakeHeadCollisions(snakeHead.getHead());
+                snake.addHeadToCollider(colliderMatrix);
             }
         }
 
         public void Draw(Renderer renderer)
         {
-            renderer.DrawAt(0, 0, TilesX, TilesY, Brushes.Orange);
+            renderer.DrawAt(0, 0, tilesX, tilesY, Brushes.Orange);
 
             foreach (var player in Players)
             {
@@ -107,17 +98,86 @@ namespace Snake_Projekt
             {
                 if (Random.Next(1) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.ValuableFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else
-                    Food.Add(foodFactory.ProduceFood(this.TilesX, this.TilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 
             }
         }
+
+        public void GiveRandomSnakeSpeedUpEffect()
+        {
+            
+            var random = new Random();
+            foreach (var snake in Players)
+            {
+                if (snake.isAlive)
+                {
+                    
+                }
+            }
+            var playerToMakeSpeedy = random.Next(this.Players.Count);
+            Players.ElementAt(playerToMakeSpeedy).StartSpeedUp();
+        }
+
+        
+        private void SpawnNewPlayer(int amountOfPlayers, int tilesX, int tilesY)
+        {
+            switch (amountOfPlayers)
+            {
+                case 1:
+                {
+                    var startLocation = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation.X, startLocation.Y, 5, Config.Player.Player1));
+                    return;
+                }
+                case 2:
+                {
+                    var startLocation1 = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
+                    var startLocation2 = GetStartLocation(tilesX, tilesY, Config.Player.Player2);
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation1.X, startLocation1.Y, 5, Config.Player.Player1));
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation2.X, startLocation2.Y, 5, Config.Player.Player2));
+                    return;
+                }
+                case 3:
+                {
+                    var startLocation1 = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
+                    var startLocation2 = GetStartLocation(tilesX, tilesY, Config.Player.Player2);
+                    var startLocation3 = GetStartLocation(tilesX, tilesY, Config.Player.Player3);
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation1.X, startLocation1.Y, 5, Config.Player.Player1));
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation2.X, startLocation2.Y, 5, Config.Player.Player2));
+                    Players.Add(SnakeFactory.ProduceSnake(startLocation3.X, startLocation3.Y, 5, Config.Player.Player3));
+                    return;
+                }
+
+            }
+        }
+
+        private Point GetStartLocation(int tilesX, int tilesY, Config.Player player)
+        {
+            switch (player)
+            {
+                case Config.Player.Player1:
+                    var startPoint1 = new Point(1, 2);
+                    return startPoint1;
+                case Config.Player.Player2:
+                    var startPoint2 = new Point(48, 2);
+                    return startPoint2;
+                case Config.Player.Player3:
+                    var startPoint3 = new Point(tilesX / 2, 48);
+                    return startPoint3;
+                default:
+                {
+                    throw new MissingFieldException();
+                }
+            }
+        }
+
 
         public int GetPlayerScore(int playerScore)
         {

@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collider.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="CoordinateConverter.cs" />
     <Compile Include="Food.cs" />
@@ -64,12 +65,6 @@
     <Compile Include="Renderer.cs" />
     <Compile Include="Snake.cs" />
     <Compile Include="SnakeBody.cs" />
-    <Compile Include="TheGrandMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TheGrandMenu.Designer.cs">
-      <DependentUpon>TheGrandMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Trigger.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
