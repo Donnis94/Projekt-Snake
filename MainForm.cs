@@ -18,6 +18,9 @@ namespace Snake_Projekt
         private Trigger trigger;
         public static int FPS = 40;
 
+        public delegate void KeyPushedHandler(Keys key);
+        public static event KeyPushedHandler keyPushed;
+
         private int TilesX = 50;
         private int TilesY = 50;
 
@@ -27,7 +30,7 @@ namespace Snake_Projekt
             BackColor = Color.Black;
             InitializeComponent();
             Initialize();
-            KeyDown += pf.MainForm_KeyPress;
+            KeyDown += MainForm_KeyPress;
             Resize += MainForm_Resize;
 
             Snake.ScoreChanged += OnScoreUpdated;
@@ -78,6 +81,11 @@ namespace Snake_Projekt
         private void MainForm_Resize(object sender, EventArgs e)
         {
             r.updateAreaSize();
+        }
+
+        public void MainForm_KeyPress(object sender, KeyEventArgs e)
+        {
+            keyPushed.Invoke(e.KeyCode);
         }
     }
 }
