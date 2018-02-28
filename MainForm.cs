@@ -18,20 +18,22 @@ namespace Snake_Projekt
         private Trigger trigger;
         public static int FPS = 40;
 
+        public delegate void KeyPushedHandler(Keys key);
+        public static event KeyPushedHandler keyPushed;
+
         private int TilesX = 50;
         private int TilesY = 50;
 
         public MainForm(int AmountOfPlayer)
         {
-
             this.WindowState = FormWindowState.Maximized;
             BackColor = Color.Black;
             InitializeComponent();
             pf = new PlayField(AmountOfPlayer, TilesX, TilesY);
             Initialize();
-            KeyDown += pf.MainForm_KeyPress;
+            KeyDown += MainForm_KeyPress;
             Resize += MainForm_Resize;
-
+            
             Snake.ScoreChanged += OnScoreUpdated;
         }
 
@@ -46,10 +48,12 @@ namespace Snake_Projekt
 
         }
 
+
         
 
         private void Draw(Object obj, PaintEventArgs args)
         {
+            r.UpdateGraphic(args.Graphics);
             pf.Draw(r);
         }
 
@@ -57,9 +61,6 @@ namespace Snake_Projekt
         {
             pf.GameLoop();
             MainForm_Label.Refresh();
-            //Player1_Score_Label.Text = pf.GetPlayerScore(1).ToString();
-            //Player2_Score_Label.Text = pf.GetPlayerScore(2).ToString();
-            //Player3_Score_Label.Text = pf.GetPlayerScore(3).ToString();
         }
 
         private void OnScoreUpdated(Snake source)
@@ -81,6 +82,11 @@ namespace Snake_Projekt
         private void MainForm_Resize(object sender, EventArgs e)
         {
             r.updateAreaSize();
+        }
+
+        public void MainForm_KeyPress(object sender, KeyEventArgs e)
+        {
+            keyPushed.Invoke(e.KeyCode);
         }
     }
 }

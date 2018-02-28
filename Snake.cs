@@ -33,6 +33,7 @@ namespace Snake_Projekt
         public Config.Player player { get; private set; }
         public bool isAlive { get; set; }
         public bool isSpeedy = false;
+        private Image image;
 
         public enum Direction { up, down, left, right };
 
@@ -44,6 +45,7 @@ namespace Snake_Projekt
             this.currentDirection = Config.GetPlayerDirection(player);
             this.controller = Config.GetPlayerControl(player);
             this.brush = Config.GetPlayerColor(player);
+            this.image = Config.GetPlayerImage(player);
             this.player = player;
             this.score = 0;
             this.isAlive = true;
@@ -55,11 +57,6 @@ namespace Snake_Projekt
             body.Add(new SnakeBody(point, this));
             expand(size);
             Move();
-        }
-
-        public void ControllerInput(Keys key)
-        {
-            controller.ValidMove(key);
         }
 
         public void Move()
@@ -161,11 +158,6 @@ namespace Snake_Projekt
             {
                 c.EnterCollidableObject(body[i]);
             }
-        }
-
-        public int GetScore()
-        {
-            return this.score;
         }
 
         public void Draw(Renderer renderer)

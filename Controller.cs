@@ -12,6 +12,11 @@ namespace Snake_Projekt
 
         public Snake.Direction direction;
 
+        public Controller()
+        {
+            MainForm.keyPushed += ValidMove;
+        }
+
         public abstract void ValidMove(Keys key);
 
     }

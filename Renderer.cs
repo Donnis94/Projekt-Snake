@@ -24,17 +24,31 @@ namespace Snake_Projekt
         public void updateAreaSize()
         {
             coordConv.setDimentions(drawControll.Size.Width, drawControll.Size.Height);
-            drawArea = drawControll.CreateGraphics();
+            
+        }
+
+        public void UpdateGraphic(Graphics g)
+        {
+            drawArea = g;
         }
 
         public void DrawAt(int x, int y, Brush b)
         {
-            drawArea.FillRectangle(b, coordConv.toViewX(x), coordConv.toViewY(y), coordConv.scale, coordConv.scale);
+            DrawAt(x, y, 1, 1, b);
         }
 
         public void DrawAt(int x, int y, int width, int heigth, Brush b)
         {
             drawArea.FillRectangle(b, coordConv.toViewX(x), coordConv.toViewY(y), width * coordConv.scale, heigth * coordConv.scale);
+        }
+
+        public void DrawImage(int x, int y, int width, int heigth, Image image)
+        {
+            drawArea.DrawImage(image,coordConv.toViewX(x), coordConv.toViewY(y), width * coordConv.scale, heigth * coordConv.scale);
+        }
+        public void DrawImage(int x, int y, Image image)
+        {
+            DrawImage(x, y, 1, 1, image);
         }
     }
 }
