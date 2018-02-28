@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Snake_Projekt
 {
-    public partial class TheGrandMenu : Form
+    partial class TheGrandMenu : Form
     {
         public TheGrandMenu()
         {
