@@ -96,13 +96,13 @@ namespace Snake_Projekt
         {
             if (Food.Count < 20)
             {
-                if (Random.Next(1) == 0)
+                if (Random.Next(20) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.ValuableFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else
                     Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
