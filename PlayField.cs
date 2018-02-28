@@ -22,7 +22,7 @@ namespace Snake_Projekt
 
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
-            SpawnNewPlayer(1, tilesX, tilesY);
+            SpawnNewPlayer(3, tilesX, tilesY);
             this.tilesX = tilesX;
             this.tilesY = tilesY;
 
@@ -51,15 +51,7 @@ namespace Snake_Projekt
 
         private bool IsGameOver()
         {
-            foreach (var player in Players)
-            {
-                if (player.isAlive)
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return Players.Select(player => player.isAlive).FirstOrDefault();
         }
 
         private void CheckCollisions()
@@ -101,14 +93,14 @@ namespace Snake_Projekt
             {
                 if (Random.Next(20) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.ValuableFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
                     Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 
             }
         }
@@ -117,15 +109,16 @@ namespace Snake_Projekt
         {
             
             var random = new Random();
+            var SnakesAvailable = new HashSet<Snake>();
             foreach (var snake in Players)
             {
                 if (snake.isAlive)
                 {
-                    
+                    SnakesAvailable.Add(snake);
                 }
             }
-            var playerToMakeSpeedy = random.Next(this.Players.Count);
-            Players.ElementAt(playerToMakeSpeedy).StartSpeedUp();
+            var playerToMakeSpeedy = random.Next(SnakesAvailable.Count);
+            SnakesAvailable.ElementAt(playerToMakeSpeedy).StartSpeedUp();
         }
 
         
@@ -180,27 +173,7 @@ namespace Snake_Projekt
                 }
             }
         }
-
-        /*
-        public int GetPlayerScore(int playerScore)
-        {
-            switch (playerScore)
-            {
-                case 1:
-                    return Players.ElementAt(0).GetScore();
-                    break;
-                case 2:
-                    return Players.ElementAt(1).GetScore();
-                    break;
-                case 3:
-                    return Players.ElementAt(2).GetScore();
-                    break;
-            }
-
-            return 0;
-        }
-        */
-
+        
         private void EndGame()
         {
             if (IsGameOver())
@@ -208,13 +181,7 @@ namespace Snake_Projekt
                 // Stop game somehow.
             }
         }
-
-        /*
-        public int AmountOfPlayers()
-        {
-            return Players.Count;
-        }
-        */
+        
 
         public void MainForm_KeyPress(object sender, KeyEventArgs e)
         {
