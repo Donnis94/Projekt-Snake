@@ -55,6 +55,7 @@ namespace Snake_Projekt
         public void Start()
         {
             active = true;
+            Count = Threshold;
         }
 
         public void Stop()
