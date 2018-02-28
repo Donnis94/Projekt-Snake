@@ -32,7 +32,7 @@ namespace Snake_Projekt
             Initialize();
             KeyDown += MainForm_KeyPress;
             Resize += MainForm_Resize;
-
+            
             Snake.ScoreChanged += OnScoreUpdated;
         }
 
@@ -49,10 +49,12 @@ namespace Snake_Projekt
 
         }
 
+
         
 
         private void Draw(Object obj, PaintEventArgs args)
         {
+            r.UpdateGraphic(args.Graphics);
             pf.Draw(r);
         }
 

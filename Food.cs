@@ -23,7 +23,7 @@ namespace Snake_Projekt
             this.brush = brush;
         }
 
-        public void Draw(Renderer renderer)
+        public virtual void Draw(Renderer renderer)
         {
             renderer.DrawAt(position.X, position.Y, brush);
         }
@@ -54,6 +54,12 @@ namespace Snake_Projekt
             base.CollisionEffect(sb);
             AmountOfValuableFood--;
         }
+
+        public override void Draw(Renderer renderer)
+        {
+            renderer.DrawImage(position.X, position.Y, Config.ValuableFoodImage);
+        }
+
     }
 
     class StandardFood : Food
@@ -73,6 +79,11 @@ namespace Snake_Projekt
             AmountOfStandardFood--;
         }
 
+        public override void Draw(Renderer renderer)
+        {
+            renderer.DrawImage(position.X, position.Y, Config.StandardFoodImage);
+        }
+
     }
 
     class SpeedyFood : Food
@@ -84,6 +95,12 @@ namespace Snake_Projekt
             AmountOfSpeedyFood++;
             points = 0;
             growth = 0;
+            
+        }
+
+        public override void Draw(Renderer renderer)
+        {
+            renderer.DrawImage(position.X, position.Y, Config.SpeedUpImage);
         }
 
         public override void CollisionEffect(SnakeBody sb)

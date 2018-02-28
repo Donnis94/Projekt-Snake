@@ -20,7 +20,8 @@ namespace Snake_Projekt
 
         public void Draw(Renderer renderer, Brush b)
         {
-            renderer.DrawAt(position.X, position.Y, b);
+            //renderer.DrawAt(position.X, position.Y, b);
+            renderer.DrawImage(position.X, position.Y, Config.SpeedUpImage);
         }
 
         public void Draw(Renderer renderer)
