@@ -14,7 +14,7 @@ namespace Snake_Projekt
         protected int growth;
         public Point position { get; set; }
         protected PlayField playField;
-        private Random Random = new Random();
+        //private Random Random = new Random();
 
         public Food(Point position, PlayField playField, Brush brush)
         {
@@ -90,7 +90,6 @@ namespace Snake_Projekt
         {
             base.CollisionEffect(sb);
             playField.GiveRandomSnakeSpeedUpEffect();
-            //sb.mySnake.isSpeedy = true;
             AmountOfSpeedyFood--;
         }
     }

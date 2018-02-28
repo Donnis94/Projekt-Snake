@@ -98,14 +98,14 @@ namespace Snake_Projekt
             {
                 if (Random.Next(1) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
                 }
                 else
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
                 
             }
         }
@@ -178,7 +178,7 @@ namespace Snake_Projekt
             }
         }
 
-
+        /*
         public int GetPlayerScore(int playerScore)
         {
             switch (playerScore)
@@ -196,6 +196,7 @@ namespace Snake_Projekt
 
             return 0;
         }
+        */
 
         private void EndGame()
         {
@@ -205,10 +206,12 @@ namespace Snake_Projekt
             }
         }
 
+        /*
         public int AmountOfPlayers()
         {
             return Players.Count;
         }
+        */
 
         public void MainForm_KeyPress(object sender, KeyEventArgs e)
         {

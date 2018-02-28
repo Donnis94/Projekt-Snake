@@ -163,11 +163,6 @@ namespace Snake_Projekt
             }
         }
 
-        public int GetScore()
-        {
-            return this.score;
-        }
-
         public void Draw(Renderer renderer)
         {
             if (!isAlive)

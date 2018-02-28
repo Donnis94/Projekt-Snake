@@ -57,9 +57,6 @@ namespace Snake_Projekt
         {
             pf.GameLoop();
             MainForm_Label.Refresh();
-            //Player1_Score_Label.Text = pf.GetPlayerScore(1).ToString();
-            //Player2_Score_Label.Text = pf.GetPlayerScore(2).ToString();
-            //Player3_Score_Label.Text = pf.GetPlayerScore(3).ToString();
         }
 
         private void OnScoreUpdated(Snake source)
