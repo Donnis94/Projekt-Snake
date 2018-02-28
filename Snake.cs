@@ -57,11 +57,6 @@ namespace Snake_Projekt
             Move();
         }
 
-        public void ControllerInput(Keys key)
-        {
-            controller.ValidMove(key);
-        }
-
         public void Move()
         {
             if (!isAlive)

@@ -181,14 +181,5 @@ namespace Snake_Projekt
                 // Stop game somehow.
             }
         }
-        
-
-        public void MainForm_KeyPress(object sender, KeyEventArgs e)
-        {
-                foreach (var player in Players)
-                {
-                    player.ControllerInput(e.KeyCode);
-                }
-        }
     }
 }
