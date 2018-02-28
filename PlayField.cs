@@ -53,10 +53,13 @@ namespace Snake_Projekt
         {
             foreach (var player in Players)
             {
-                //return player.IsAlive();
+                if (player.isAlive)
+                {
+                    return false;
+                }
             }
 
-            return false;
+            return true;
         }
 
         private void CheckCollisions()
