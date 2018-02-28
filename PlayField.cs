@@ -179,24 +179,6 @@ namespace Snake_Projekt
         }
 
 
-        public int GetPlayerScore(int playerScore)
-        {
-            switch (playerScore)
-            {
-                case 1:
-                    return Players.ElementAt(0).GetScore();
-                    break;
-                case 2:
-                    return Players.ElementAt(1).GetScore();
-                    break;
-                case 3:
-                    return Players.ElementAt(2).GetScore();
-                    break;
-            }
-
-            return 0;
-        }
-
         private void EndGame()
         {
             if (IsGameOver())
@@ -210,12 +192,6 @@ namespace Snake_Projekt
             return Players.Count;
         }
 
-        public void MainForm_KeyPress(object sender, KeyEventArgs e)
-        {
-                foreach (var player in Players)
-                {
-                    player.ControllerInput(e.KeyCode);
-                }
-        }
+      
     }
 }

@@ -72,6 +72,11 @@
     <Compile Include="TheGrandMenu.Designer.cs">
       <DependentUpon>TheGrandMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="TheGrandMenu1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TheGrandMenu.resx</DependentUpon>
+    </Compile>
     <Compile Include="Trigger.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -88,6 +93,8 @@
     </Compile>
     <EmbeddedResource Include="TheGrandMenu.resx">
       <DependentUpon>TheGrandMenu.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TheGrandMenu1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
