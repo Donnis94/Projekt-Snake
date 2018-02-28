@@ -16,5 +16,37 @@ namespace Snake_Projekt
         {
             InitializeComponent();
         }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int Players = 1;   
+            MainForm Form = new MainForm(Players);
+            Form.Show();
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int Players = 2;
+            MainForm Form = new MainForm(Players);
+            Form.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int Players = 3;
+            MainForm Form = new MainForm(Players);
+            Form.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -24,11 +24,12 @@ namespace Snake_Projekt
         private int TilesX = 50;
         private int TilesY = 50;
 
-        public MainForm()
+        public MainForm(int AmountOfPlayer)
         {
             this.WindowState = FormWindowState.Maximized;
             BackColor = Color.Black;
             InitializeComponent();
+            pf = new PlayField(AmountOfPlayer, TilesX, TilesY);
             Initialize();
             KeyDown += MainForm_KeyPress;
             Resize += MainForm_Resize;
@@ -39,8 +40,6 @@ namespace Snake_Projekt
         private void Initialize()
         {
             MainForm_Label.Paint += new PaintEventHandler(Draw);
-            
-            pf = new PlayField(1, TilesX, TilesY);
             r = new Renderer(MainForm_Label, TilesX, TilesY);
             timer = new Timer();
             timer.Tick += new EventHandler(TimerEventHandler);
