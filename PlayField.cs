@@ -22,7 +22,7 @@ namespace Snake_Projekt
 
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
-            SpawnNewPlayer(1, tilesX, tilesY);
+            SpawnNewPlayer(AmountOfPlayers, tilesX, tilesY);
             this.tilesX = tilesX;
             this.tilesY = tilesY;
 
