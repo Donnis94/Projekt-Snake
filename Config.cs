@@ -14,6 +14,7 @@ namespace Snake_Projekt
         public static Image ValuableFoodImage = Image.FromFile("ValueableFoodImage.png");
         public static Image StandardFoodImage = Image.FromFile("StandardFoodImage.png");
 
+
         public static Image Player1Image = Image.FromFile("Player1Image.png");
         public static Image Player2Image = Image.FromFile("Player2Image.png");
         public static Image Player3Image = Image.FromFile("Player3Image.png");

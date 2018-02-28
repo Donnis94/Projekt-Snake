@@ -99,5 +99,13 @@
   <ItemGroup>
     <None Include="ElSnakeo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Player1Image.png" />
+    <Content Include="Player2Image.png" />
+    <Content Include="Player3Image.png" />
+    <Content Include="SpeedUpImage.png" />
+    <Content Include="StandardFoodImage.png" />
+    <Content Include="ValueableFoodImage.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
