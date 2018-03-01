@@ -17,7 +17,6 @@ namespace Snake_Projekt
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TheGrandMenu());
-            
         }
     }
 }

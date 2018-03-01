@@ -22,7 +22,6 @@ namespace Snake_Projekt
             int Players = 1;   
             MainForm Form = new MainForm(Players);
             Form.Show();
-           
         }
 
         private void button2_Click(object sender, EventArgs e)

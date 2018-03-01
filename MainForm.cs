@@ -48,9 +48,6 @@ namespace Snake_Projekt
 
         }
 
-
-        
-
         private void Draw(Object obj, PaintEventArgs args)
         {
             r.UpdateGraphic(args.Graphics);
