@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +41,12 @@ namespace Snake_Projekt
         public void DrawAt(int x, int y, int width, int heigth, Brush b)
         {
             drawArea.FillRectangle(b, coordConv.toViewX(x), coordConv.toViewY(y), width * coordConv.scale, heigth * coordConv.scale);
+        }
+
+        public void DrawImage(int x, int y, int width, int heigth, Image image, Color tint)
+        {
+            Rectangle rf = new Rectangle(0, 0, (int)(width * coordConv.scale), (int)(heigth * coordConv.scale));
+            drawArea.DrawImage(image, rf, coordConv.toViewX(x), coordConv.toViewY(y), width * coordConv.scale, heigth * coordConv.scale, GraphicsUnit.Pixel, new ImageAttributes());
         }
 
         public void DrawImage(int x, int y, int width, int heigth, Image image)
