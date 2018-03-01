@@ -58,9 +58,7 @@ namespace Snake_Projekt
                 {
                     return false;
                 }
-                
             }
-
             return true;
         }
 
@@ -111,13 +109,12 @@ namespace Snake_Projekt
                 }
                 else
                     Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
-                
             }
         }
 
         public void GiveRandomSnakeSpeedUpEffect()
         {
-            var SnakesAvailable = new HashSet<Snake>();
+            
             var random = new Random();
             foreach (var snake in Players)
             {
@@ -183,20 +180,9 @@ namespace Snake_Projekt
             }
         }
 
-
-        private void EndGame()
-        {
-            if (IsGameOver())
-            {
-                
-            }
-        }
-
         public int AmountOfPlayers()
         {
             return Players.Count;
         }
-
-      
     }
 }
