@@ -110,5 +110,4 @@ namespace Snake_Projekt
             AmountOfSpeedyFood--;
         }
     }
-
 }

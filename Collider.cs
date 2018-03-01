@@ -31,7 +31,6 @@ namespace Snake_Projekt
             {
                 return true;
             }
-
             return false;
         }
 
@@ -41,7 +40,6 @@ namespace Snake_Projekt
             {
                 collidables[objectsToCollide.position.X, objectsToCollide.position.Y] = objectsToCollide;
             }
-            
         }
 
         public void SnakeHeadCollisions(SnakeBody snakeHead)

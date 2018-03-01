@@ -44,10 +44,7 @@ namespace Snake_Projekt
                     Food producedFood = new StandardFood(new Point(XCoor, YCoor), playField);
                     return producedFood;
                 }
-                
-        }
-           
-            
-        }
+        }       
+    }
 }
 
