@@ -41,7 +41,7 @@
             // 
             // table_Layout_Panel1
             // 
-            this.table_Layout_Panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.table_Layout_Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.table_Layout_Panel1.ColumnCount = 3;
             this.table_Layout_Panel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.table_Layout_Panel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -64,7 +64,7 @@
             // Player3_Score_Label
             // 
             this.Player3_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Player3_Score_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.Player3_Score_Label.Font = new System.Drawing.Font("Segoe UI Black", 16F);
             this.Player3_Score_Label.Location = new System.Drawing.Point(391, 50);
             this.Player3_Score_Label.Name = "Player3_Score_Label";
             this.Player3_Score_Label.Size = new System.Drawing.Size(190, 50);
@@ -75,7 +75,7 @@
             // Player2_Score_Label
             // 
             this.Player2_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Player2_Score_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.Player2_Score_Label.Font = new System.Drawing.Font("Segoe UI Black", 16F);
             this.Player2_Score_Label.Location = new System.Drawing.Point(197, 50);
             this.Player2_Score_Label.Name = "Player2_Score_Label";
             this.Player2_Score_Label.Size = new System.Drawing.Size(188, 50);
@@ -86,7 +86,7 @@
             // Player3_Name_Label
             // 
             this.Player3_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Player3_Name_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.Player3_Name_Label.Font = new System.Drawing.Font("Segoe UI Black", 16F);
             this.Player3_Name_Label.Location = new System.Drawing.Point(391, 0);
             this.Player3_Name_Label.Name = "Player3_Name_Label";
             this.Player3_Name_Label.Size = new System.Drawing.Size(190, 50);
@@ -97,7 +97,7 @@
             // Player2_Name_Label
             // 
             this.Player2_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Player2_Name_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.Player2_Name_Label.Font = new System.Drawing.Font("Segoe UI Black", 16F);
             this.Player2_Name_Label.Location = new System.Drawing.Point(197, 0);
             this.Player2_Name_Label.Name = "Player2_Name_Label";
             this.Player2_Name_Label.Size = new System.Drawing.Size(188, 50);
@@ -108,7 +108,7 @@
             // Player1_Name_Label
             // 
             this.Player1_Name_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Player1_Name_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.Player1_Name_Label.Font = new System.Drawing.Font("Segoe UI Black", 16F);
             this.Player1_Name_Label.Location = new System.Drawing.Point(3, 0);
             this.Player1_Name_Label.Name = "Player1_Name_Label";
             this.Player1_Name_Label.Size = new System.Drawing.Size(188, 50);
@@ -119,7 +119,7 @@
             // Player1_Score_Label
             // 
             this.Player1_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Player1_Score_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.Player1_Score_Label.Font = new System.Drawing.Font("Segoe UI Black", 16F);
             this.Player1_Score_Label.Location = new System.Drawing.Point(3, 50);
             this.Player1_Score_Label.Name = "Player1_Score_Label";
             this.Player1_Score_Label.Size = new System.Drawing.Size(188, 50);
@@ -129,7 +129,7 @@
             // 
             // MainForm_Label
             // 
-            this.MainForm_Label.BackColor = System.Drawing.SystemColors.Highlight;
+            this.MainForm_Label.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.MainForm_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainForm_Label.Location = new System.Drawing.Point(0, 100);
             this.MainForm_Label.Name = "MainForm_Label";

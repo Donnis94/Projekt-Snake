@@ -27,7 +27,6 @@ namespace Snake_Projekt
         public MainForm(int AmountOfPlayer)
         {
             this.WindowState = FormWindowState.Maximized;
-            BackColor = Color.Black;
             InitializeComponent();
             this.DoubleBuffered = true;
             pf = new PlayField(AmountOfPlayer, TilesX, TilesY);
