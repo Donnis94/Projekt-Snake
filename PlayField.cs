@@ -103,31 +103,31 @@ namespace Snake_Projekt
             {
                 if (Random.Next(20) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.ValuableFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
                     Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 
             }
         }
 
         public void GiveRandomSnakeSpeedUpEffect()
         {
-            
+            var SnakesAvailable = new HashSet<Snake>();
             var random = new Random();
             foreach (var snake in Players)
             {
                 if (snake.isAlive)
                 {
-                    
+                    SnakesAvailable.Add(snake);
                 }
             }
-            var playerToMakeSpeedy = random.Next(this.Players.Count);
-            Players.ElementAt(playerToMakeSpeedy).StartSpeedUp();
+            var playerToMakeSpeedy = random.Next(SnakesAvailable.Count);
+            SnakesAvailable.ElementAt(playerToMakeSpeedy).StartSpeedUp();
         }
 
         
