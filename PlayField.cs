@@ -58,7 +58,9 @@ namespace Snake_Projekt
                 {
                     return false;
                 }
+                
             }
+
             return true;
         }
 
@@ -99,7 +101,7 @@ namespace Snake_Projekt
         {
             if (Food.Count < 20)
             {
-                if (Random.Next(1) == 0)
+                if (Random.Next(20) == 0)
                 {
                     Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
@@ -109,21 +111,23 @@ namespace Snake_Projekt
                 }
                 else
                     Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                
             }
         }
 
         public void GiveRandomSnakeSpeedUpEffect()
         {
+            var SnakesAvailable = new HashSet<Snake>();
             var random = new Random();
             foreach (var snake in Players)
             {
                 if (snake.isAlive)
                 {
-                    
+                    SnakesAvailable.Add(snake);
                 }
             }
-            var playerToMakeSpeedy = random.Next(this.Players.Count);
-            Players.ElementAt(playerToMakeSpeedy).StartSpeedUp();
+            var playerToMakeSpeedy = random.Next(SnakesAvailable.Count);
+            SnakesAvailable.ElementAt(playerToMakeSpeedy).StartSpeedUp();
         }
 
         
@@ -167,10 +171,10 @@ namespace Snake_Projekt
                     var startPoint1 = new Point(1, 2);
                     return startPoint1;
                 case Config.Player.Player2:
-                    var startPoint2 = new Point(48, 2);
+                    var startPoint2 = new Point(tilesX - 2, 2);
                     return startPoint2;
                 case Config.Player.Player3:
-                    var startPoint3 = new Point(tilesX / 2, 48);
+                    var startPoint3 = new Point(tilesX / 2, tilesY-2);
                     return startPoint3;
                 default:
                 {
@@ -179,9 +183,20 @@ namespace Snake_Projekt
             }
         }
 
+
+        private void EndGame()
+        {
+            if (IsGameOver())
+            {
+                
+            }
+        }
+
         public int AmountOfPlayers()
         {
             return Players.Count;
         }
+
+      
     }
 }
