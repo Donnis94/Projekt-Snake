@@ -37,7 +37,8 @@ namespace Snake_Projekt
 
         public void GameLoop()
         {
-            
+            if(!IsGameOver())
+            { 
             foreach (var player in Players)
             {
                 player.Update();
@@ -47,6 +48,7 @@ namespace Snake_Projekt
             if (IsGameOver())
             {
                 gameOver.Invoke(this, null);  
+            }
             }
         }
 
@@ -160,6 +162,24 @@ namespace Snake_Projekt
                 }
 
             }
+        }
+
+        public Snake GetHighScore()
+        {
+            var HighScore = -1;
+            Snake WinnerSnake = null;
+
+            foreach (var player in Players)
+            {
+                if (player.Score > HighScore)
+                {
+                    HighScore = player.Score;
+                    WinnerSnake = player;
+                }
+            }
+
+            return WinnerSnake;
+
         }
 
         private Point GetStartLocation(int tilesX, int tilesY, Config.Player player)

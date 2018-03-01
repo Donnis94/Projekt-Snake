@@ -88,6 +88,8 @@ namespace Snake_Projekt
 
         private void MainForm_GameOver(object sender, EventArgs e)
         {
+            Snake highScore = pf.GetHighScore();
+            System.Windows.Forms.MessageBox.Show($"Congratuations {highScore.player.ToString()} ! \n\nYour highscore is {highScore.Score.ToString()}");
             this.Close();
         }
     }
