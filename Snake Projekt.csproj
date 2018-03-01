@@ -115,6 +115,9 @@
     <None Include="ElSnakeo.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Player1Image.png" />
     <Content Include="Images\Player2Image.png" />
     <Content Include="Images\Player3Image.png" />

@@ -10,14 +10,14 @@ namespace Snake_Projekt
     static class Config
     {
         public enum Player { Player1, Player2, Player3 }
-        public static Image SpeedUpImage = Image.FromFile(@"../../Images/SpeedUpImage.png");
-        public static Image ValuableFoodImage = Image.FromFile(@"../../Images/ValueableFoodImage.png");
-        public static Image StandardFoodImage = Image.FromFile(@"../../Images/StandardFoodImage.png");
+        public static Image SpeedUpImage = Image.FromFile(@"..\..\Images\SpeedUpImage.png");
+        public static Image ValuableFoodImage = Image.FromFile(@"..\..\Images\ValueableFoodImage.png");
+        public static Image StandardFoodImage = Image.FromFile(@"..\..\Images\StandardFoodImage.png");
 
 
-        public static Image Player1Image = Image.FromFile(@"../../Images/Player1Image.png");
-        public static Image Player2Image = Image.FromFile(@"../../Images/Player2Image.png");
-        public static Image Player3Image = Image.FromFile(@"../../Images/Player3Image.png");
+        public static Image Player1Image = Image.FromFile(@"..\..\Images\Player1Image.png");
+        public static Image Player2Image = Image.FromFile(@"..\..\Images\Player2Image.png");
+        public static Image Player3Image = Image.FromFile(@"..\..\Images\Player3Image.png");
 
         public static Brush GetPlayerColor(Player player)
         {
