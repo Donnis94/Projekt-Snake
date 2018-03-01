@@ -116,15 +116,17 @@ namespace Snake_Projekt
         {
             
             var random = new Random();
+            var snakesAvaliable = new HashSet<Snake>();
+
             foreach (var snake in Players)
             {
                 if (snake.isAlive)
                 {
-                    SnakesAvailable.Add(snake);
+                    snakesAvaliable.Add(snake);
                 }
             }
-            var playerToMakeSpeedy = random.Next(SnakesAvailable.Count);
-            SnakesAvailable.ElementAt(playerToMakeSpeedy).StartSpeedUp();
+            var playerToMakeSpeedy = random.Next(snakesAvaliable.Count);
+            snakesAvaliable.ElementAt(playerToMakeSpeedy).StartSpeedUp();
         }
 
         
