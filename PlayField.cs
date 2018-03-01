@@ -83,7 +83,7 @@ namespace Snake_Projekt
 
         public void Draw(Renderer renderer)
         {
-            renderer.DrawAt(0, 0, tilesX, tilesY, Brushes.Ivory);
+            renderer.DrawAt(0, 0, tilesX, tilesY, Brushes.LightGray);
 
             foreach (var player in Players)
             {
@@ -101,14 +101,14 @@ namespace Snake_Projekt
             {
                 if (Random.Next(20) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.ValuableFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
                     Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
             }
         }
 

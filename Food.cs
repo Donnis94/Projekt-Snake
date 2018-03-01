@@ -42,7 +42,7 @@ namespace Snake_Projekt
     {
         public static int AmountOfValuableFood;
 
-        public ValuableFood(Point position, PlayField playField) : base(position, playField, Brushes.DarkGray)
+        public ValuableFood(Point position, PlayField playField) : base(position, playField, Brushes.Orange)
         {
             AmountOfValuableFood++;
             points = 5;
@@ -57,7 +57,8 @@ namespace Snake_Projekt
 
         public override void Draw(Renderer renderer)
         {
-            renderer.DrawImage(position.X, position.Y, Config.ValuableFoodImage);
+            base.Draw(renderer);
+            //renderer.DrawImage(position.X, position.Y, Config.ValuableFoodImage);
         }
 
     }
@@ -66,7 +67,7 @@ namespace Snake_Projekt
     {
         public static int AmountOfStandardFood;
 
-        public StandardFood(Point position, PlayField playField) : base(position, playField, Brushes.DarkBlue)
+        public StandardFood(Point position, PlayField playField) : base(position, playField, Brushes.Yellow)
         {
             AmountOfStandardFood++;
             points = 1;
@@ -81,7 +82,8 @@ namespace Snake_Projekt
 
         public override void Draw(Renderer renderer)
         {
-            renderer.DrawImage(position.X, position.Y, Config.StandardFoodImage);
+            base.Draw(renderer);
+            //renderer.DrawImage(position.X, position.Y, Config.StandardFoodImage);
         }
 
     }
@@ -90,7 +92,7 @@ namespace Snake_Projekt
     {
         public static int AmountOfSpeedyFood;
 
-        public SpeedyFood(Point position, PlayField playField) : base(position, playField, Brushes.Brown)
+        public SpeedyFood(Point position, PlayField playField) : base(position, playField, Brushes.Purple)
         {
             AmountOfSpeedyFood++;
             points = 0;
@@ -100,7 +102,8 @@ namespace Snake_Projekt
 
         public override void Draw(Renderer renderer)
         {
-            renderer.DrawImage(position.X, position.Y, Config.SpeedUpImage);
+            base.Draw(renderer);
+            //renderer.DrawImage(position.X, position.Y, Config.SpeedUpImage);
         }
 
         public override void CollisionEffect(SnakeBody sb)

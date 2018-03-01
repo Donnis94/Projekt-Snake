@@ -41,7 +41,7 @@
             // 
             // table_Layout_Panel1
             // 
-            this.table_Layout_Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.table_Layout_Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.table_Layout_Panel1.ColumnCount = 3;
             this.table_Layout_Panel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.table_Layout_Panel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -74,6 +74,7 @@
             // 
             // Player2_Score_Label
             // 
+            this.Player2_Score_Label.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Player2_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Player2_Score_Label.Font = new System.Drawing.Font("Segoe UI Black", 16F);
             this.Player2_Score_Label.Location = new System.Drawing.Point(197, 50);
@@ -118,6 +119,7 @@
             // 
             // Player1_Score_Label
             // 
+            this.Player1_Score_Label.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Player1_Score_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Player1_Score_Label.Font = new System.Drawing.Font("Segoe UI Black", 16F);
             this.Player1_Score_Label.Location = new System.Drawing.Point(3, 50);
@@ -129,7 +131,7 @@
             // 
             // MainForm_Label
             // 
-            this.MainForm_Label.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.MainForm_Label.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.MainForm_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainForm_Label.Location = new System.Drawing.Point(0, 100);
             this.MainForm_Label.Name = "MainForm_Label";

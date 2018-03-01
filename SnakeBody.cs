@@ -24,6 +24,11 @@ namespace Snake_Projekt
             renderer.DrawImage(position.X, position.Y, image);
         }
 
+        public void Draw(Renderer renderer, Brush b)
+        {
+            renderer.DrawAt(position.X, position.Y, b);
+        }
+
         public void Draw(Renderer renderer)
         {
             renderer.DrawAt(position.X, position.Y, Brushes.Black);

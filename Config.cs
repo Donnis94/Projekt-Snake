@@ -26,7 +26,7 @@ namespace Snake_Projekt
                 case Player.Player1:
                     return Brushes.Red;
                 case Player.Player2:
-                    return Brushes.BlanchedAlmond;
+                    return Brushes.Green;
                 case Player.Player3:
                     return Brushes.Blue;
             }
