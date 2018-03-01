@@ -20,6 +20,7 @@ namespace Snake_Projekt
         private int tilesX;
         private int tilesY;
 
+        public event EventHandler gameOver;
         public PlayField(int AmountOfPlayers, int tilesX, int tilesY)
         {
             SpawnNewPlayer(AmountOfPlayers, tilesX, tilesY);
@@ -45,7 +46,7 @@ namespace Snake_Projekt
             SpawnNewFood();
             if (IsGameOver())
             {
-
+                gameOver.Invoke(this, null);  
             }
         }
 
@@ -53,10 +54,14 @@ namespace Snake_Projekt
         {
             foreach (var player in Players)
             {
-                //return player.IsAlive();
+                if (player.isAlive)
+                {
+                    return false;
+                }
+                
             }
 
-            return false;
+            return true;
         }
 
         private void CheckCollisions()
@@ -183,7 +188,7 @@ namespace Snake_Projekt
         {
             if (IsGameOver())
             {
-                // Stop game somehow.
+                
             }
         }
 

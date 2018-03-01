@@ -33,8 +33,8 @@ namespace Snake_Projekt
             Initialize();
             KeyDown += MainForm_KeyPress;
             Resize += MainForm_Resize;
-            
             Snake.ScoreChanged += OnScoreUpdated;
+            pf.gameOver += MainForm_GameOver;
         }
 
         private void Initialize()
@@ -87,6 +87,11 @@ namespace Snake_Projekt
         public void MainForm_KeyPress(object sender, KeyEventArgs e)
         {
             keyPushed.Invoke(e.KeyCode);
+        }
+
+        private void MainForm_GameOver(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
