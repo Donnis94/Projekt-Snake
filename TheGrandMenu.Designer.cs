@@ -39,7 +39,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(514, 175);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(361, 43);
+            this.button1.Size = new System.Drawing.Size(360, 40);
             this.button1.TabIndex = 0;
             this.button1.Text = "1Player";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -50,7 +50,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(514, 243);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(361, 43);
+            this.button2.Size = new System.Drawing.Size(360, 40);
             this.button2.TabIndex = 1;
             this.button2.Text = "2Player";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -61,7 +61,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(514, 312);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(361, 43);
+            this.button3.Size = new System.Drawing.Size(360, 40);
             this.button3.TabIndex = 2;
             this.button3.Text = "3Player";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -72,7 +72,7 @@
             // 
             this.button4.Location = new System.Drawing.Point(514, 380);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(361, 43);
+            this.button4.Size = new System.Drawing.Size(360, 40);
             this.button4.TabIndex = 3;
             this.button4.Text = "Highscore";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -83,7 +83,7 @@
             // 
             this.button5.Location = new System.Drawing.Point(514, 444);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(361, 43);
+            this.button5.Size = new System.Drawing.Size(360, 40);
             this.button5.TabIndex = 4;
             this.button5.Text = "Exit";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -95,7 +95,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Snake_Projekt.Properties.Resources.ElSnakeo;
-            this.ClientSize = new System.Drawing.Size(1280, 703);
+            this.ClientSize = new System.Drawing.Size(1274, 701);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
