@@ -168,7 +168,7 @@ namespace Snake_Projekt
             }
             for (int i = 0; i < body.Count; i++)
             {
-                body[i].Draw(renderer, brush);
+                body[i].Draw(renderer, this.image);
             }
         }
     }

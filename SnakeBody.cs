@@ -18,10 +18,10 @@ namespace Snake_Projekt
             position = _position;
         }
 
-        public void Draw(Renderer renderer, Brush b)
+        public void Draw(Renderer renderer, Image image)
         {
             //renderer.DrawAt(position.X, position.Y, b);
-            renderer.DrawImage(position.X, position.Y, Config.SpeedUpImage);
+            renderer.DrawImage(position.X, position.Y, image);
         }
 
         public void Draw(Renderer renderer)
