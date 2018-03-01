@@ -96,16 +96,16 @@ namespace Snake_Projekt
         {
             if (Food.Count < 20)
             {
-                if (Random.Next(1) == 0)
+                if (Random.Next(20) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.ValuableFood, colliderMatrix));
                 }
                 else if (Random.Next(50) == 0)
                 {
                     Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
                 }
                 else
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
                 
             }
         }
@@ -166,10 +166,10 @@ namespace Snake_Projekt
                     var startPoint1 = new Point(1, 2);
                     return startPoint1;
                 case Config.Player.Player2:
-                    var startPoint2 = new Point(48, 2);
+                    var startPoint2 = new Point(tilesX - 2, 2);
                     return startPoint2;
                 case Config.Player.Player3:
-                    var startPoint3 = new Point(tilesX / 2, 48);
+                    var startPoint3 = new Point(tilesX / 2, tilesY-2);
                     return startPoint3;
                 default:
                 {

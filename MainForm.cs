@@ -21,19 +21,19 @@ namespace Snake_Projekt
         public delegate void KeyPushedHandler(Keys key);
         public static event KeyPushedHandler keyPushed;
 
-        private int TilesX = 50;
-        private int TilesY = 50;
+        private int TilesX = 40;
+        private int TilesY = 30;
 
         public MainForm(int AmountOfPlayer)
         {
             this.WindowState = FormWindowState.Maximized;
             BackColor = Color.Black;
             InitializeComponent();
+            this.DoubleBuffered = true;
             pf = new PlayField(AmountOfPlayer, TilesX, TilesY);
             Initialize();
             KeyDown += MainForm_KeyPress;
             Resize += MainForm_Resize;
-            
             Snake.ScoreChanged += OnScoreUpdated;
         }
 
