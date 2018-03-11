@@ -12,11 +12,8 @@ namespace Snake_Projekt
 {
     partial class TheGrandMenu : Form
     {
-        public TheGrandMenu()
-        {
-            InitializeComponent();
-        }
-        
+        public TheGrandMenu() => InitializeComponent();
+
         private void button1_Click(object sender, EventArgs e)
         {
             int Players = 1;   
@@ -40,7 +37,8 @@ namespace Snake_Projekt
 
         private void button4_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            HsForm Form = new HsForm();
+            Form.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)

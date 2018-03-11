@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Collections;
+using System.IO;
 
 namespace Snake_Projekt
 {
@@ -177,10 +179,43 @@ namespace Snake_Projekt
                     WinnerSnake = player;
                 }
             }
-
+            UpdateHighscore(HighScore);
             return WinnerSnake;
 
         }
+
+        private void UpdateHighscore(int Highscore)
+        {
+            StreamReader SR = new StreamReader(@"Highscore.txt");
+            int [] Scores = new int[5];
+            for (int counter = 0; counter < 5; counter++)
+            {
+                Scores[counter] = int.Parse(SR.ReadLine());
+
+            }
+            SR.Close();
+            for (int counter = 4; counter >= 0; counter--)
+            {
+                if (counter==0)
+                {
+                    Scores[counter] = Highscore;
+                    break;
+                }
+                else if (Scores[counter] < Highscore && Scores[counter - 1] > Highscore)
+                {
+                    Scores[counter] = Highscore;
+                    break;
+                }
+            }
+            StreamWriter SW = new StreamWriter(@"Highscore.txt");
+            for (int counter = 0; counter < 5; counter++)
+            {
+
+                SW.WriteLine(Scores[counter]);
+            }
+            SW.Close();
+        }
+        
 
         private Point GetStartLocation(int tilesX, int tilesY, Config.Player player)
         {

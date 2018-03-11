@@ -53,6 +53,12 @@
     <Compile Include="CoordinateConverter.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="FoodFactory.cs" />
+    <Compile Include="HsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HsForm.Designer.cs">
+      <DependentUpon>HsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ICollideble.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -80,6 +86,9 @@
       <DependentUpon>TheGrandMenu.resx</DependentUpon>
     </Compile>
     <Compile Include="Trigger.cs" />
+    <EmbeddedResource Include="HsForm.resx">
+      <DependentUpon>HsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
