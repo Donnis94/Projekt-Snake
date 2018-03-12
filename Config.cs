@@ -10,14 +10,6 @@ namespace Snake_Projekt
     static class Config
     {
         public enum Player { Player1, Player2, Player3 }
-        public static Image SpeedUpImage = Image.FromFile(@"..\..\Images\SpeedUpImage.png");
-        public static Image ValuableFoodImage = Image.FromFile(@"..\..\Images\ValueableFoodImage.png");
-        public static Image StandardFoodImage = Image.FromFile(@"..\..\Images\StandardFoodImage.png");
-
-
-        public static Image Player1Image = Image.FromFile(@"..\..\Images\Player1Image.png");
-        public static Image Player2Image = Image.FromFile(@"..\..\Images\Player2Image.png");
-        public static Image Player3Image = Image.FromFile(@"..\..\Images\Player3Image.png");
 
         public static string HighScoreTxtFileLocation = @"..\..\Highscore.txt";
 
@@ -34,23 +26,6 @@ namespace Snake_Projekt
             }
 
             return Brushes.Black;
-        }
-
-        public static Image GetPlayerImage(Player player)
-        {
-            switch (player)
-            {
-                case Player.Player1:
-                    return Player1Image;
-                case Player.Player2:
-                    return Player2Image;
-                case Player.Player3:
-                    return Player3Image;
-                default:
-                {
-                    throw new MissingFieldException();
-                }
-            }
         }
 
         public static Controller GetPlayerControl(Player player)

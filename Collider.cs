@@ -20,6 +20,7 @@ namespace Snake_Projekt
             Clear();
         }
 
+        //Checks that the snake is not out of bounds
         public bool SnakeOutOfBounds(SnakeBody snakeHead)
         {
             if (snakeHead.position.X < 0 || snakeHead.position.X >= XSize)
@@ -34,6 +35,7 @@ namespace Snake_Projekt
             return false;
         }
 
+        //Enters a object into the collision matrix
         public void EnterCollidableObject(ICollideble objectsToCollide)
         {
             if (collidables[objectsToCollide.position.X, objectsToCollide.position.Y] == null)
@@ -42,6 +44,7 @@ namespace Snake_Projekt
             }
         }
 
+        //Checks the snake head against the collision matrix to see if it is colliding with anything and then adds is
         public void SnakeHeadCollisions(SnakeBody snakeHead)
         {
             if (SnakeOutOfBounds(snakeHead))

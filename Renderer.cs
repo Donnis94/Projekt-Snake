@@ -42,20 +42,5 @@ namespace Snake_Projekt
         {
             drawArea.FillRectangle(b, coordConv.toViewX(x), coordConv.toViewY(y), width * coordConv.scale, heigth * coordConv.scale);
         }
-
-        public void DrawImage(int x, int y, int width, int heigth, Image image, Color tint)
-        {
-            Rectangle rf = new Rectangle(0, 0, (int)(width * coordConv.scale), (int)(heigth * coordConv.scale));
-            drawArea.DrawImage(image, rf, coordConv.toViewX(x), coordConv.toViewY(y), width * coordConv.scale, heigth * coordConv.scale, GraphicsUnit.Pixel, new ImageAttributes());
-        }
-
-        public void DrawImage(int x, int y, int width, int heigth, Image image)
-        {
-            drawArea.DrawImage(image,coordConv.toViewX(x), coordConv.toViewY(y), width * coordConv.scale, heigth * coordConv.scale);
-        }
-        public void DrawImage(int x, int y, Image image)
-        {
-            DrawImage(x, y, 1, 1, image);
-        }
     }
 }
