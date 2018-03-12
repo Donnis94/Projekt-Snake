@@ -69,13 +69,12 @@ namespace Snake_Projekt
             for (int i = body.Count - 1; i > 0; i--)
                 body[i].MoveTo(body[i - 1]);
 
-            MoveSnakeHead();
+            MoveSnakeHead(); // Först flyttas alla bodies, sist flyttas huvudet.
         }
 
-        public void Update()
+        public void Update() // Hanterar våra förflyttningar och speed up.
         {
-            //Move();
-            moveTrigger.Tick();
+            moveTrigger.Tick(); 
             speedTimeTrigger.Tick();
         }
 
@@ -93,7 +92,7 @@ namespace Snake_Projekt
 
         private void MoveSnakeHead()
         {
-            if (!isValidMove())
+            if (!isValidMove()) // Om det inte är ett tillåten förflyttning så fortsätter snaken åt sammma håll.
             {
                 controller.direction = currentDirection;
             }
@@ -127,7 +126,7 @@ namespace Snake_Projekt
             return true;
         }
 
-        public void expand(int count)
+        public void expand(int count) // Utökar snakes med ett antal snakebodies.
         {
             for (int i = 0; i < count; i++)
                 body.Add(new SnakeBody(body[body.Count - 1].position, this));

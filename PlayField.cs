@@ -101,7 +101,7 @@ namespace Snake_Projekt
 
         private void SpawnNewFood()
         {
-            if (Food.Count < 20)
+            if (Food.Count < 20) // Det kan inte vara mer än 20 mat på spelplanen samtidigt.
             {
                 if (Random.Next(20) == 0)
                 {
@@ -109,7 +109,7 @@ namespace Snake_Projekt
                 }
                 else if (Random.Next(50) == 0)
                 {
-                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix));
+                    Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.SpeedyFood, colliderMatrix)); 
                 }
                 else
                     Food.Add(foodFactory.ProduceFood(this.tilesX, this.tilesY, this, FoodFactory.FoodType.StandardFood, colliderMatrix));
@@ -205,7 +205,6 @@ namespace Snake_Projekt
             StreamWriter SW = new StreamWriter(Config.HighScoreTxtFileLocation);
             for (int counter = 4; counter >=0; counter--)
             {
-
                 SW.WriteLine(Scores[counter]);
             }
             SW.Close();
