@@ -124,6 +124,7 @@
     <None Include="ElSnakeo.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Highscore.txt" />
     <Content Include="Images\Player1Image.png" />
     <Content Include="Images\Player2Image.png" />
     <Content Include="Images\Player3Image.png" />

@@ -16,7 +16,7 @@ namespace Snake_Projekt
         public HsForm()
         {
             InitializeComponent();
-            StreamReader SR = new StreamReader(@"Highscore.txt");
+            StreamReader SR = new StreamReader(Config.HighScoreTxtFileLocation);
             int[] scores = new int[5];
             for (int counter = 0; counter < 5; counter++)
             {

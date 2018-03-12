@@ -19,6 +19,8 @@ namespace Snake_Projekt
         public static Image Player2Image = Image.FromFile(@"..\..\Images\Player2Image.png");
         public static Image Player3Image = Image.FromFile(@"..\..\Images\Player3Image.png");
 
+        public static string HighScoreTxtFileLocation = @"..\..\Highscore.txt";
+
         public static Brush GetPlayerColor(Player player)
         {
             switch (player)

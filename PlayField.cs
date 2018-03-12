@@ -39,18 +39,18 @@ namespace Snake_Projekt
 
         public void GameLoop()
         {
-            if(!IsGameOver())
-            { 
-            foreach (var player in Players)
+            if (!IsGameOver())
             {
-                player.Update();
-            }
-            CheckCollisions();
-            SpawnNewFood();
-            if (IsGameOver())
-            {
-                gameOver.Invoke(this, null);  
-            }
+                foreach (var player in Players)
+                {
+                    player.Update();
+                }
+                CheckCollisions();
+                SpawnNewFood();
+                if (IsGameOver())
+                {
+                    gameOver.Invoke(this, null);
+                }
             }
         }
 
@@ -118,7 +118,7 @@ namespace Snake_Projekt
 
         public void GiveRandomSnakeSpeedUpEffect()
         {
-            
+
             var random = new Random();
             var snakesAvaliable = new HashSet<Snake>();
 
@@ -133,35 +133,35 @@ namespace Snake_Projekt
             snakesAvaliable.ElementAt(playerToMakeSpeedy).StartSpeedUp();
         }
 
-        
+
         private void SpawnNewPlayer(int amountOfPlayers, int tilesX, int tilesY)
         {
             switch (amountOfPlayers)
             {
                 case 1:
-                {
-                    var startLocation = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
-                    Players.Add(SnakeFactory.ProduceSnake(startLocation.X, startLocation.Y, 5, Config.Player.Player1));
-                    return;
-                }
+                    {
+                        var startLocation = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
+                        Players.Add(SnakeFactory.ProduceSnake(startLocation.X, startLocation.Y, 5, Config.Player.Player1));
+                        return;
+                    }
                 case 2:
-                {
-                    var startLocation1 = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
-                    var startLocation2 = GetStartLocation(tilesX, tilesY, Config.Player.Player2);
-                    Players.Add(SnakeFactory.ProduceSnake(startLocation1.X, startLocation1.Y, 5, Config.Player.Player1));
-                    Players.Add(SnakeFactory.ProduceSnake(startLocation2.X, startLocation2.Y, 5, Config.Player.Player2));
-                    return;
-                }
+                    {
+                        var startLocation1 = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
+                        var startLocation2 = GetStartLocation(tilesX, tilesY, Config.Player.Player2);
+                        Players.Add(SnakeFactory.ProduceSnake(startLocation1.X, startLocation1.Y, 5, Config.Player.Player1));
+                        Players.Add(SnakeFactory.ProduceSnake(startLocation2.X, startLocation2.Y, 5, Config.Player.Player2));
+                        return;
+                    }
                 case 3:
-                {
-                    var startLocation1 = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
-                    var startLocation2 = GetStartLocation(tilesX, tilesY, Config.Player.Player2);
-                    var startLocation3 = GetStartLocation(tilesX, tilesY, Config.Player.Player3);
-                    Players.Add(SnakeFactory.ProduceSnake(startLocation1.X, startLocation1.Y, 5, Config.Player.Player1));
-                    Players.Add(SnakeFactory.ProduceSnake(startLocation2.X, startLocation2.Y, 5, Config.Player.Player2));
-                    Players.Add(SnakeFactory.ProduceSnake(startLocation3.X, startLocation3.Y, 5, Config.Player.Player3));
-                    return;
-                }
+                    {
+                        var startLocation1 = GetStartLocation(tilesX, tilesY, Config.Player.Player1);
+                        var startLocation2 = GetStartLocation(tilesX, tilesY, Config.Player.Player2);
+                        var startLocation3 = GetStartLocation(tilesX, tilesY, Config.Player.Player3);
+                        Players.Add(SnakeFactory.ProduceSnake(startLocation1.X, startLocation1.Y, 5, Config.Player.Player1));
+                        Players.Add(SnakeFactory.ProduceSnake(startLocation2.X, startLocation2.Y, 5, Config.Player.Player2));
+                        Players.Add(SnakeFactory.ProduceSnake(startLocation3.X, startLocation3.Y, 5, Config.Player.Player3));
+                        return;
+                    }
 
             }
         }
@@ -186,36 +186,31 @@ namespace Snake_Projekt
 
         private void UpdateHighscore(int Highscore)
         {
-            StreamReader SR = new StreamReader(@"Highscore.txt");
-            int [] Scores = new int[5];
+            StreamReader SR = new StreamReader(Config.HighScoreTxtFileLocation);
+            int[] Scores = new int[5];
             for (int counter = 0; counter < 5; counter++)
             {
                 Scores[counter] = int.Parse(SR.ReadLine());
 
             }
             SR.Close();
-            for (int counter = 4; counter >= 0; counter--)
+            
+            //If the place 5 score is less then the new score replace it then sort
+            if (Scores[4] < Highscore)
             {
-                if (counter==0)
-                {
-                    Scores[counter] = Highscore;
-                    break;
-                }
-                else if (Scores[counter] < Highscore && Scores[counter - 1] > Highscore)
-                {
-                    Scores[counter] = Highscore;
-                    break;
-                }
+                Scores[4] = Highscore;
             }
-            StreamWriter SW = new StreamWriter(@"Highscore.txt");
-            for (int counter = 0; counter < 5; counter++)
+            Array.Sort(Scores);
+
+            StreamWriter SW = new StreamWriter(Config.HighScoreTxtFileLocation);
+            for (int counter = 4; counter >=0; counter--)
             {
 
                 SW.WriteLine(Scores[counter]);
             }
             SW.Close();
         }
-        
+
 
         private Point GetStartLocation(int tilesX, int tilesY, Config.Player player)
         {
@@ -228,12 +223,12 @@ namespace Snake_Projekt
                     var startPoint2 = new Point(tilesX - 2, 2);
                     return startPoint2;
                 case Config.Player.Player3:
-                    var startPoint3 = new Point(tilesX / 2, tilesY-2);
+                    var startPoint3 = new Point(tilesX / 2, tilesY - 2);
                     return startPoint3;
                 default:
-                {
-                    throw new MissingFieldException();
-                }
+                    {
+                        throw new MissingFieldException();
+                    }
             }
         }
 
